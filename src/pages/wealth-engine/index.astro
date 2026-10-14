@@ -2,96 +2,123 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
-const posts = await getCollection('wealth-engine');
+const posts = (await getCollection('wealth-engine')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
 <Layout title="The Wealth Engine | Covinair Capital">
-  <div class="pillar-header">
-    <div class="badge">Pillar 02</div>
-    <h1>The Wealth Engine</h1>
-    <p>Compound growth, equity allocation, real asset investing, and automated savings systems.</p>
-  </div>
-
   <div class="posts-list">
-    {posts.map((post) => (
-      <article class="post-card">
+    {posts.map((post, index) => (
+      <article class={`post-card ${index >= 4 ? 'hidden-card' : ''}`}>
         <span class="category">{post.data.category}</span>
-        <h2><a href={`/wealth-engine/${post.id}`}>{post.data.title}</a></h2>
+        <h2>
+          <a href={`/wealth-engine/${post.id}`}>{post.data.title}</a>
+        </h2>
         <p>{post.data.description}</p>
-        <div class="meta">
-          <span>{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-          <a href={`/wealth-engine/${post.id}`} class="read-more">Read Article &rarr;</a>
-        </div>
       </article>
     ))}
   </div>
+
+  {posts.length > 4 && (
+    <div class="load-more-wrap">
+      <button id="load-more-btn" class="btn-load-more">Load More Articles</button>
+    </div>
+  )}
+
+  <script is:inline>
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', () => {
+        document.querySelectorAll('.post-card.hidden-card').forEach((card) => {
+          card.classList.remove('hidden-card');
+        });
+        loadMoreBtn.parentElement.remove();
+      });
+    }
+  </script>
 </Layout>
 
 <style>
-  .pillar-header {
-    text-align: center;
-    margin: 3rem 0;
-  }
-  .badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: rgba(59, 130, 246, 0.15);
-    color: #60a5fa;
-    border-radius: 9999px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  .pillar-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.75rem;
-  }
-  .pillar-header p {
-    color: var(--color-text-muted);
-    max-width: 600px;
-    margin: 0 auto;
-  }
   .posts-list {
     display: grid;
     gap: 1.5rem;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2.5rem auto 1.5rem;
   }
+
   .post-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 1.75rem;
+    transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
   }
+
+  .post-card:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-primary-border);
+    transform: translateY(-1px);
+  }
+
+  .post-card.hidden-card {
+    display: none;
+  }
+
   .category {
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-primary);
     text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
+
   .post-card h2 {
     font-size: 1.35rem;
-    margin: 0.4rem 0 0.6rem;
+    font-weight: 700;
+    margin: 0.5rem 0 0.65rem;
+    line-height: 1.35;
   }
+
+  .post-card h2 a {
+    color: var(--color-text-heading);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
   .post-card h2 a:hover {
-    color: #93c5fd;
+    color: var(--color-primary);
   }
+
   .post-card p {
     color: var(--color-text-muted);
     font-size: 0.95rem;
-    margin-bottom: 1rem;
+    line-height: 1.6;
+    margin: 0;
   }
-  .meta {
-    display: flex;
-    justify-content: space-between;
+
+  .load-more-wrap {
+    text-align: center;
+    margin: 2rem auto 4rem;
+  }
+
+  .btn-load-more {
+    display: inline-flex;
     align-items: center;
-    font-size: 0.825rem;
-    color: #6b7280;
-    border-top: 1px solid var(--color-border);
-    padding-top: 0.75rem;
-  }
-  .read-more {
-    color: #60a5fa;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-size: 0.95rem;
     font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+  }
+
+  .btn-load-more:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-1px);
   }
 </style>
