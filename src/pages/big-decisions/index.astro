@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = await getCollection('big-decisions');
+---
+
+<Layout title="The Big Decisions | Covinair Capital">
+  <div class="pillar-header">
+    <div class="badge">Pillar 03</div>
+    <h1>The Big Decisions</h1>
+    <p>Frameworks for major financial milestones: home purchases, career shifts, and estate planning.</p>
+  </div>
+
+  <div class="posts-list">
+    {posts.map((post) => (
+      <article class="post-card">
+        <span class="category">{post.data.category}</span>
+        <h2><a href={`/big-decisions/${post.id}`}>{post.data.title}</a></h2>
+        <p>{post.data.description}</p>
+        <div class="meta">
+          <span>{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          <a href={`/big-decisions/${post.id}`} class="read-more">Read Article &rarr;</a>
+        </div>
+      </article>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .pillar-header {
+    text-align: center;
+    margin: 3rem 0;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .pillar-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .pillar-header p {
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .posts-list {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .post-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1.75rem;
+  }
+  .category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+  }
+  .post-card h2 {
+    font-size: 1.35rem;
+    margin: 0.4rem 0 0.6rem;
+  }
+  .post-card h2 a:hover {
+    color: #93c5fd;
+  }
+  .post-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.825rem;
+    color: #6b7280;
+    border-top: 1px solid var(--color-border);
+    padding-top: 0.75rem;
+  }
+  .read-more {
+    color: #60a5fa;
+    font-weight: 600;
+  }
+</style>

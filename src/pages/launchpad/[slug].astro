@@ -1,0 +1,237 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('launchpad');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={`${post.data.title} | Covinair Capital`} description={post.data.description}>
+  <article class="article-page">
+    <div class="breadcrumb">
+      <a href="/">Home</a> / <a href="/launchpad">The Launchpad</a> / <span>{post.data.title}</span>
+    </div>
+    
+    <header class="article-header">
+      <span class="category-badge">{post.data.category}</span>
+      <h1>{post.data.title}</h1>
+      <p class="description">{post.data.description}</p>
+      <time datetime={post.data.pubDate.toISOString()}>
+        Published: {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+    </header>
+
+    <div class="article-body">
+      <Content />
+    </div>
+
+    <script is:inline>
+      // Gracefully hide image container if the image file has not been created yet
+      document.querySelectorAll('.article-image-box img').forEach(img => {
+        img.addEventListener('error', function() {
+          const figure = this.closest('.article-image-box');
+          if (figure) figure.remove();
+        });
+      });
+    </script>
+  </article>
+</Layout>
+
+<style>
+  .article-page {
+    max-width: 760px;
+    margin: 2rem auto;
+  }
+  .breadcrumb {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a {
+    color: var(--color-primary);
+  }
+  .category-badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+  }
+  .article-header h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--color-text-heading);
+  }
+  .description {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+  }
+  time {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+  }
+  
+  /* Article Typography & Markdown styles */
+  .article-body {
+    line-height: 1.8;
+    font-size: 1.075rem;
+    color: var(--color-text);
+  }
+  .article-body :global(h2) {
+    font-size: 1.75rem;
+    margin: 2.25rem 0 1rem;
+    color: var(--color-text-heading);
+    letter-spacing: -0.01em;
+  }
+  .article-body :global(h3) {
+    font-size: 1.35rem;
+    margin: 1.75rem 0 0.75rem;
+    color: var(--color-text-heading);
+  }
+  .article-body :global(p) {
+    margin-bottom: 1.25rem;
+  }
+  .article-body :global(ul), .article-body :global(ol) {
+    margin: 1rem 0 1.5rem 1.5rem;
+  }
+  .article-body :global(li) {
+    margin-bottom: 0.4rem;
+  }
+
+  /* ⚡ At a Glance Summary Card */
+  .article-body :global(.summary-card) {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .article-body :global(.summary-title) {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+  .article-body :global(.summary-text) {
+    font-weight: 500;
+    color: var(--color-text-heading);
+    margin-bottom: 0.75rem;
+  }
+  .article-body :global(.summary-metrics) {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .article-body :global(.summary-metrics li) {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: 0.35rem;
+  }
+
+  /* 🖼️ Editorial Image Box */
+  .article-body :global(.article-image-box) {
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .article-body :global(.article-image-box:empty) {
+    display: none;
+    margin: 0;
+  }
+  .article-body :global(.article-image-box img) {
+    width: 100%;
+    max-height: 440px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: block;
+  }
+  /* Gracefully hide image and wrapper if image file does not exist yet */
+  .article-body :global(.article-image-box img:not([src])) {
+    display: none;
+  }
+
+  /* 🎬 AI Animation Container */
+  .article-body :global(.animation-container) {
+    background: #f1f5f9;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .article-body :global(.animation-caption) {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* 🛠️ Weekend Wealth Checklist */
+  .article-body :global(.todo-card) {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2.5rem 0 2rem;
+  }
+  .article-body :global(.todo-card h3) {
+    font-size: 1.15rem;
+    margin: 0 0 0.75rem;
+    color: #166534;
+  }
+  .article-body :global(.todo-list) {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .article-body :global(.todo-list li) {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #14532d;
+  }
+  .article-body :global(.todo-list li::before) {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #16a34a;
+    font-weight: bold;
+  }
+
+  /* ⚖️ Legal Disclaimer */
+  .article-body :global(.disclaimer-footer) {
+    border-top: 1px solid var(--color-border);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+  }
+  .article-body :global(.disclaimer-footer p) {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    font-style: italic;
+  }
+</style>

@@ -1,0 +1,285 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const launchpadPosts = await getCollection('launchpad');
+const wealthEnginePosts = await getCollection('wealth-engine');
+const bigDecisionsPosts = await getCollection('big-decisions');
+---
+
+<Layout title="Covinair Capital | The Family Wealth Playbook">
+  <section class="hero">
+    <div class="hero-badge">Generational Wealth Framework</div>
+    <h1 class="hero-title">The Financial Playbook They Didn't Teach You in School.</h1>
+    <p class="hero-subtitle">
+      A generational guide to mastering daily cash flow, and long-term wealth—building for every stage of your life.
+    </p>
+    <div class="hero-actions">
+      <a href="/start-here" class="btn btn-primary">Start Here</a>
+      <a href="#pillars" class="btn btn-secondary">Explore the Pillars</a>
+    </div>
+  </section>
+
+  <section id="pillars" class="pillars-section">
+    <div class="section-header">
+      <h2>The Core Pillars</h2>
+      <p>Systematic blueprints to protect and multiply family capital.</p>
+    </div>
+
+    <div class="pillars-grid">
+      <!-- Pillar 1 -->
+      <div class="pillar-card">
+        <div class="pillar-tag">Pillar 01</div>
+        <h3>The Launchpad</h3>
+        <p>Master cash flow dynamics, foundational budgeting, liquidity reserves, and early momentum.</p>
+        <div class="articles-list">
+          <h4>Recent Articles:</h4>
+          <ul>
+            {launchpadPosts.map((post) => (
+              <li>
+                <a href={`/launchpad/${post.id}`}>{post.data.title}</a>
+                <span class="date">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <a href="/launchpad" class="pillar-link">Browse Launchpad &rarr;</a>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="pillar-card">
+        <div class="pillar-tag">Pillar 02</div>
+        <h3>The Wealth Engine</h3>
+        <p>Convert surplus cash flow into passive asset accumulation, equity compounding, and generational engines.</p>
+        <div class="articles-list">
+          <h4>Recent Articles:</h4>
+          <ul>
+            {wealthEnginePosts.map((post) => (
+              <li>
+                <a href={`/wealth-engine/${post.id}`}>{post.data.title}</a>
+                <span class="date">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <a href="/wealth-engine" class="pillar-link">Browse Wealth Engine &rarr;</a>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="pillar-card">
+        <div class="pillar-tag">Pillar 03</div>
+        <h3>The Big Decisions</h3>
+        <p>Playbooks for pivotal life milestones—property acquisitions, equity grants, legacy trusts, and risk mitigation.</p>
+        <div class="articles-list">
+          <h4>Recent Articles:</h4>
+          <ul>
+            {bigDecisionsPosts.map((post) => (
+              <li>
+                <a href={`/big-decisions/${post.id}`}>{post.data.title}</a>
+                <span class="date">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <a href="/big-decisions" class="pillar-link">Browse Big Decisions &rarr;</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 4.5rem 1rem 3.5rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary-border);
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--color-text-heading);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    max-width: 720px;
+    margin: 0 auto 2rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.15s ease;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-surface-hover);
+    transform: translateY(-1px);
+  }
+
+  .pillars-section {
+    padding: 2.5rem 0 4rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-heading);
+  }
+
+  .section-header p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .pillar-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+
+  .pillar-card:hover {
+    transform: translateY(-2px);
+    background: var(--color-surface-hover);
+  }
+
+  .pillar-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-heading);
+  }
+
+  .pillar-card p {
+    color: var(--color-text-muted);
+    font-size: 0.925rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .articles-list {
+    margin-top: auto;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .articles-list h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .articles-list ul {
+    list-style: none;
+  }
+
+  .articles-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.875rem;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .articles-list a {
+    color: var(--color-link);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .articles-list .date {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .pillar-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .pillar-link:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 640px) {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+  }
+</style>
