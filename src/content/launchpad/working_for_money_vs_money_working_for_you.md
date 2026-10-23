@@ -22,7 +22,7 @@ heroImage: "/images/working-for-money-vs-money-working-for-you.jpg"
 
 ## The 8:15 AM Local Train and the Great Hamster Wheel
 
-Every morning across the country, millions of bright minds wake up to the sound of a piercing alarm, gulp down a cup of piping hot chai, and squeeze into a crowded local train or crawl through bumper-to-bumper city traffic. We endure appraisal meetings, manage tight client deadlines, and juggle endless email threads, all for that satisfying ping on the last day of the month: "Your account has been credited with ₹..." It is an honorable routine, and it keeps the lights on and the grocery bills settled.
+Every morning across the country, millions of bright minds wake up to the sound of a piercing alarm, finish a quick breakfast, and squeeze into a crowded local train or crawl through bumper-to-bumper city traffic. We endure appraisal meetings, manage tight client deadlines, and juggle endless email threads, all for that satisfying ping on the last day of the month: "Your account has been credited with ₹..." It is an honorable routine, and it keeps the lights on and the grocery bills settled.
 
 Yet, there is a fundamental paradox at the heart of this daily sprint. 
 
@@ -38,7 +38,7 @@ While Ramesh treats his income as the final destination of his labor, Sunita tre
 
 ## The Linear Math of Active Labor
 
-Active income is undeniably the launchpad of everyone's financial journey. Without a job, a trade, or a professional practice, none of us would have the initial cash required to participate in the wealth-building arena. However, treating your salary as your sole wealth engine is a high-risk bet on your own biology.
+Active income is undeniably the launchpad of everyone's financial journey. Without a job, a trade, or a professional practice, none of us would have the initial cash required to participate in the wealth-building arena. However, treating your salary as your sole wealth plan is a high-risk bet on your own biology.
 
 Your physical and mental energy have natural biological limits, and a day stubbornly contains only twenty-four hours. Even if you hold an executive title commanding ₹5,000 an hour, you cannot work seventy hours a day. The ceiling on active labor is absolute and unyielding.
 
@@ -82,9 +82,9 @@ Shifting from active labor to capital ownership sounds straightforward, yet mill
 
 There is a comforting emotional reassurance in opening an FD receipt or walking into a bank branch to update a physical passbook. But safety in nominal terms is often an absolute illusion in real purchasing power terms.
 
-If a bank offers you a 7% interest rate on a fixed deposit, and you fall into the standard 30% income tax slab, your post-tax return drops down to around 4.9%. Meanwhile, the real-world inflation rate for healthcare, education, and quality groceries often runs between 6% and 8%. Every single year your money sits quietly inside that "safe" fixed deposit, it is actually losing purchasing power. You are not putting your money to work; you are keeping it on an unpaid unpaid sabbatical where its value steadily evaporates.
+If a bank offers you a 7% interest rate on a fixed deposit, and you fall into the standard 30% income tax slab, your post-tax return drops down to around 4.9%. Meanwhile, the real-world inflation rate for healthcare, education, and quality groceries often runs between 6% and 8%. Every single year your money sits quietly inside that "safe" fixed deposit, it is actually losing purchasing power. You are not putting your money to work; you are keeping it on an unpaid sabbatical where its value steadily evaporates.
 
-Physical real estate presents its own set of friction points. Buying a rental apartment in a major metropolitan hub often locks up ₹80 lakh to ₹1.5 crore of capital, while delivering a meager gross rental yield of 2.5% to 3%. Once you subtract property taxes, society maintenance charges, tenant vacancy periods, and brokerage fees, the net yield barely covers basic inflation. 
+Physical real estate presents its own set of headaches and costs. Buying a rental apartment in a major metropolitan hub often locks up ₹80 lakh to ₹1.5 crore of capital, while delivering a meager gross rental yield of 2.5% to 3%. Once you subtract property taxes, society maintenance charges, tenant vacancy periods, and brokerage fees, the net yield barely covers basic inflation. 
 
 True financial leverage does not come from illiquid, heavy brick-and-mortar assets that demand constant maintenance and tenant disputes. It comes from liquid, transparent, inflation-beating asset classes that compound effortlessly in the background while you focus on living your life.
 

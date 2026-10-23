@@ -10,7 +10,7 @@ heroImage: "/images/teaching-kids-about-money.jpg"
   <p class="summary-title">⚡ At a Glance</p>
   <p class="summary-text">Raising financially savvy kids in an era of effortless UPI scans and instant delivery apps requires replacing old-school secrecy with practical, age-tailored habits. By walking children through tangible money milestones, parents can transform abstract numbers into lifelong financial intelligence.</p>
   <ul class="summary-metrics">
-    <li>🎯 Tactile Beginnings: Transparent jars beat opaque ceramic piggy banks by visually showing children the trade-offs of spending cash.</li>
+    <li>🎯 Hands-On Beginnings: Transparent jars beat opaque ceramic piggy banks by visually showing children the trade-offs of spending cash.</li>
     <li>🎯 The Pain of the QR Code: Children must learn that tapping a smartphone screen drains finite earnings from a bank account rather than conjuring infinite wealth.</li>
     <li>🎯 The Compounding Runway: Introducing a teenager to index funds and compounding math turns time into their single most profitable asset.</li>
   </ul>
@@ -42,7 +42,7 @@ Here is a practical, stage-by-stage guide to raising grounded, money-smart child
 
 ## Ages 4 to 7: Making the Invisible Visible
 
-Before young children can understand bank balances, their brains require physical, tactile anchors. Expecting a five-year-old to understand digital numbers is like asking them to read classic literature before learning the alphabet.
+Before young children can understand bank balances, their brains require physical, physical objects. Expecting a five-year-old to understand digital numbers is like asking them to read classic literature before learning the alphabet.
 
 At this developmental stage, money must be something they can hold, stack, and physically count.
 
@@ -60,7 +60,7 @@ Whenever your child receives cash from visiting relatives during festivals or as
 
 Because the jars are transparent glass, they can physically watch the **SAVE** jar pile grow taller week after week. They also see the **SPEND** jar shrink when they buy a treat. 
 
-That visual friction is their very first lesson in real-world opportunity cost.
+That visual hesitation is their very first lesson in real-world opportunity cost.
 
 ### The Bakery Waiting Game
 
@@ -193,7 +193,7 @@ Do you argue about credit card bills in secret? Do you stretch your budget on lu
 
 The greatest financial gift you can give your children is not an eight-figure inheritance. 
 
-It is the calm, lifelong confidence that comes from knowing how to earn honestly, spend thoughtfully, save patiently, and invest with discipline. Start with three glass jars on the kitchen counter today. Decades from now, your grown children will thank you over a warm cup of chai.
+It is the calm, lifelong confidence that comes from knowing how to earn honestly, spend thoughtfully, save patiently, and invest with discipline. Start with three glass jars on the kitchen counter today. Decades from now, your grown children will thank you for the financial foundation you gave them.
 
 <div class="todo-card">
   <h3>🛠️ Your Weekend Wealth Checklist</h3>

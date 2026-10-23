@@ -16,7 +16,7 @@ heroImage: "/images/stock-market-101-for-beginners.jpg"
   </ul>
 </div>
 
-<figure class="article-image-box"><img src="/images/stock-market-101-for-beginners.jpg" alt="A friendly young Indian professional learning stock market fundamentals over a warm cup of cutting chai" loading="lazy" /></figure>
+<figure class="article-image-box"><img src="/images/stock-market-101-for-beginners.jpg" alt="A friendly young Indian professional learning stock market fundamentals, analyzing company metrics and investment options" loading="lazy" /></figure>
 
 ## The Screen With Too Many Flashing Lights
 
@@ -28,7 +28,7 @@ Ananya promptly locked her phone screen, pushed her glasses up her nose, and won
 
 If you have ever felt that identical wave of sensory overload, take comfort in good company. The financial media industry profits by turning the equity market into an intimidating, high-stakes drama where only people with mathematical degrees and triple monitors supposedly survive.
 
-Yet beneath all the flashing graphics, frantic commentary, and theatrical shouting, the fundamental mechanism of the stock market is surprisingly gentle, deeply practical, and easy to grasp over a warm cup of cutting chai. 
+Yet beneath the flashing graphics and frantic commentary, the fundamental mechanism of the stock market is straightforward, deeply practical, and easy to grasp. 
 
 You do not need a Wall Street vocabulary to build serious wealth. You only need to understand what actually happens when you buy a tiny slice of an operating enterprise.
 
@@ -62,7 +62,7 @@ As the business footprint multiplies, other investors take notice. A local entre
 
 That is the entire foundation of the stock market. 
 
-When you purchase a share of an established Indian corporation—whether it is an automotive manufacturer like Swadeshi Motors, a tech giant like Kaveri Infotech, or a retail chain like BharatBazaar—you are not betting on random electronic pixels. You are buying fractional ownership of an operating business complete with factories, trucks, patents, employees, and millions of daily paying customers.
+When you purchase a share of an established Indian corporation—whether it is an automotive manufacturer like Tata Motors, an IT services leader like Infosys, or an engineering firm like Larsen & Toubro—you are not betting on random electronic pixels. You are buying fractional ownership of an operating business complete with factories, offices, patents, employees, and millions of daily paying customers.
 
 ## NSE, BSE, Nifty, and Sensex: The Grand Digital Mandi
 
@@ -76,7 +76,7 @@ India operates two premier national exchanges:
 - **The Bombay Stock Exchange (BSE):** Established in 1875 under a shady banyan tree near Mumbai's Town Hall, the BSE is Asia's oldest exchange and houses thousands of listed domestic companies.
 - **The National Stock Exchange (NSE):** Introduced in the early 1990s, the NSE revolutionized Indian investing by replacing noisy paper trading rings with lightning-fast electronic trading screens.
 
-Both exchanges perform identical economic duties. If you sit in Jaipur and want to purchase ten shares of Swadeshi Motors, and an investor in Coimbatore wants to sell ten shares of the same company, the exchange's matching engine pairs your orders in a fraction of a second at an agreed market price.
+Both exchanges perform identical economic duties. If you sit in Jaipur and want to purchase ten shares of Tata Motors, and an investor in Coimbatore wants to sell ten shares of the same company, the exchange's matching system pairs your orders in a fraction of a second at an agreed market price.
 
 ### Your Demat and Trading Accounts: The Digital Vault and Checkout Counter
 
@@ -106,7 +106,7 @@ Every social feed is littered with slick videos of young day traders standing be
 
 They spend their workdays frantically staring at minute-by-minute line charts, sweating through lunch breaks, and betting whether an index contract will wiggle by four points before 3:30 PM.
 
-That is not investing. That is a high-friction lottery ticket with catastrophic odds.
+That is not investing. That is a high-effort lottery ticket with terrible odds.
 
 In a landmark official study, SEBI analyzed the audited performance of retail individual traders in the equity F&O segment. The regulatory findings were stark: **ninety-three percent of retail derivative traders lost money**, racking up average net losses exceeding ₹1.2 lakh each, before factoring in brokerage fees, exchange turnover charges, and taxes.
 
@@ -124,7 +124,7 @@ Why has the Indian stock market generated such extraordinary long-term returns o
 
 The underlying fuel is remarkably simple: the daily consumption habits and aspirations of 1.4 billion people.
 
-Every morning, families across India wake up, turn on lights powered by utility companies, wash with branded soaps, prepare breakfast using packaged cooking oils, and commute on metro networks or national highways built with domestic steel and cement. They pay for train tickets on digital portals, buy festival attire at neighborhood shopping malls, and transfer funds through unified payment architectures linked directly to commercial lenders.
+Every morning, families across India wake up, turn on lights powered by utility companies, wash with branded soaps, prepare breakfast using packaged cooking oils, and commute on metro networks or national highways built with domestic steel and cement. They pay for train tickets on digital portals, buy festival attire at neighborhood shopping malls, and transfer funds through unified payment networks linked directly to commercial lenders.
 
 India remains one of the world's most dynamic major economies. As national gross domestic product expands toward ₹600 lakh crore in the coming decades, consumer demand across tier-two and tier-three towns will surge.
 
@@ -141,7 +141,7 @@ Once Ananya understood that investing was about owning real businesses rather th
 Here is the exact four-step blueprint any beginner can adopt this weekend:
 
 ### 1. Build an Untouchable Cash Fortress First
-Never expose money to the stock market that you will need for next month's flat deposit, credit card dues, or an unplanned family medical emergency. Before investing in equities, park three to six months of vital living expenses in a liquid savings account, a high-yield sweep-in fixed deposit, or an ultra-short debt fund. When your cash defense is solid, you will never panic-sell quality equities during an ordinary market downturn.
+Never expose money to the stock market that you will need for next month's flat deposit, credit card dues, or an unplanned family medical emergency. Before investing in equities, park three to six months of essential living expenses in a liquid savings account, a high-yield sweep-in fixed deposit, or an ultra-short debt fund. When your cash defense is solid, you will never panic-sell quality equities during an ordinary market downturn.
 
 ### 2. Ditch Stock Picking for Low-Cost Index Funds
 You do not need to spend precious weekends dissecting balance sheets or listening to earnings conference calls. By starting a Systematic Investment Plan (SIP) in a low-cost Nifty 50 or broad-market index fund, you instantly buy an ownership slice of India's top fifty commercial champions. When an individual company stagnates, the index rules automatically remove it and replace it with a thriving newcomer.
@@ -150,7 +150,7 @@ You do not need to spend precious weekends dissecting balance sheets or listenin
 Set your monthly SIP mandate for two days after your monthly salary credits your bank account. Do not try to time the market by pausing investments when prices feel high or pulling out when headlines sound gloomy. Market corrections are not disasters; they are seasonal discount sales where your regular monthly allocation purchases more business shares at reduced prices.
 
 ### 4. Silence the Sensationalist Echo Chamber
-Mute WhatsApp groups promising "sure-shot stock tips" and stop checking your portfolio value every hour. Real wealth does not sprout from frantic activity; it ripens quietly while you focus on excelling in your career, spending time with loved ones, and enjoying your evening cup of chai.
+Mute WhatsApp groups promising "sure-shot stock tips" and stop checking your portfolio value every hour. Real wealth does not sprout from frantic activity; it ripens quietly while you focus on excelling in your career, spending time with loved ones, and living your life.
 
 <div class="todo-card">
   <h3>🛠️ Your Weekend Wealth Checklist</h3>

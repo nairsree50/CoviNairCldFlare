@@ -44,7 +44,7 @@ Karthik knew how plants synthesize sunlight into glucose. He did not know how cr
 
 To understand why your school never taught you how to budget, file an income tax return, or invest in equity mutual funds, you must examine how modern schools were designed in the first place.
 
-The architecture of our education system was largely shaped during the nineteenth century, heavily influenced by the Prussian education model and the administrative needs of the British colonial era. When Thomas Babington Macaulay laid the foundation for the English Education Act in India, the objective was transparent: produce a steady, disciplined army of clerks, scribes, and administrative personnel capable of keeping the machinery of the empire running smoothly.
+The structure of our education system was largely shaped during the nineteenth century, heavily influenced by the Prussian education model and the administrative needs of the British colonial era. When Thomas Babington Macaulay laid the foundation for the English Education Act in India, the objective was transparent: produce a steady, disciplined army of clerks, scribes, and administrative personnel capable of keeping the machinery of the empire running smoothly.
 
 A parallel shift took place globally during the Industrial Revolution. Factory owners required workers who would arrive punctually when the morning whistle blew, sit in uniform rows, perform repetitive tasks without complaint, and follow instructions from supervisors.
 
@@ -95,7 +95,7 @@ When Karthik received his first credit card bill of ₹32,000 after purchasing c
 
 Assuming the bank was extending a generous favor, he paid the ₹1,600 and ignored the rest. 
 
-What the statement failed to highlight in bold print was that paying only the minimum amount revokes your interest-free grace period on every single subsequent purchase. Furthermore, the remaining balance was accruing finance charges of over 3.5% each month, plus 18% Goods and Services Tax (GST) on the interest itself. Within six months, Karthik had paid more in finance charges than the value of the clothes he originally wore to dinner.
+What the statement failed to highlight in bold print was that paying only the minimum amount revokes your interest-free grace period on every single subsequent purchase. At the same time, the remaining balance was accruing finance charges of over 3.5% each month, plus 18% Goods and Services Tax (GST) on the interest itself. Within six months, Karthik had paid more in finance charges than the value of the clothes he originally wore to dinner.
 
 ### 2. The Friendly "Insurance Uncle"
 

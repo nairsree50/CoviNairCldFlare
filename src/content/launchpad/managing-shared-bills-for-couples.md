@@ -8,10 +8,10 @@ heroImage: "/images/managing-shared-bills-for-couples.jpg"
 
 <div class="summary-card">
   <p class="summary-title">⚡ At a Glance</p>
-  <p class="summary-text">Moving in together is romantic until the first ₹8,000 summer electricity bill arrives and someone forgets to settle the grocery UPI request. Here is how modern Indian couples can ditch awkward 50/50 splits, build a friction-free joint expense engine, and keep both love and autonomy intact.</p>
+  <p class="summary-text">Moving in together is romantic until the first ₹8,000 summer electricity bill arrives and someone forgets to settle the grocery UPI request. Here is how modern Indian couples can ditch awkward 50/50 splits, build an effortless joint expense system, and keep both love and autonomy intact.</p>
   <ul class="summary-metrics">
     <li>🎯 The Proportional Fix: Splitting costs by income ratio (e.g., 70/30) prevents resentment when paychecks differ.</li>
-    <li>🎯 The 3-Account Rule: The "Yours, Mine, and Ours" architecture protects personal financial freedom without secret-keeping.</li>
+    <li>🎯 The 3-Account Rule: The "Yours, Mine, and Ours" system protects personal financial freedom without secret-keeping.</li>
     <li>🎯 Debt Boundaries: Pre-existing EMIs and family remittances stay personal to keep the shared roof peaceful.</li>
   </ul>
 </div>
@@ -26,13 +26,13 @@ Then, real life delivers its first utility bill.
 
 Peak North Indian summer arrives, both air conditioners run on turbo, and the power discom slaps you with a ₹7,800 electricity bill. The society office demands ₹4,500 for maintenance. The domestic cook asks for an advance, and the kitchen tap begins leaking. Suddenly, that casual "we will just split everything down the middle, yaar" sounds less like modern egalitarian romance and more like a recipe for quiet resentment.
 
-Money strips romance out of cohabitation faster than a broker demanding two months of advance brokerage. When two independent adults merge households in Gurugram, Bengaluru, or Mumbai across divergent salaries, unspoken assumptions invite financial friction. Cohabiting peacefully requires an operating system where neither partner feels shortchanged or terrified of opening a delivery app.
+Money strips romance out of cohabitation faster than a broker demanding two months of advance brokerage. When two independent adults merge households in Gurugram, Bengaluru, or Mumbai across divergent salaries, unspoken assumptions invite financial stress. Cohabiting peacefully requires an operating system where neither partner feels shortchanged or terrified of opening a delivery app.
 
 ## The Pitfall of the Default 50/50 Split
 
 When couples move in, their immediate instinct is symmetry: divide every household bill down the middle. On paper, a 50/50 split feels modern and fair. In reality, unless both partners earn identical paychecks, strict equality is often remarkably unfair.
 
-Consider Aditi and Kunal, a fictitious couple renting a two-bedroom apartment in Gurugram's Sector 56. Aditi is a lead product manager taking home ₹1,50,000 monthly after taxes. Kunal is a senior content strategist earning ₹60,000. Their combined household take-home is ₹2,10,000.
+Consider Aditi and Kunal, a couple renting a two-bedroom apartment in Gurugram's Sector 56. Aditi is a lead product manager taking home ₹1,50,000 monthly after taxes. Kunal is a senior content strategist earning ₹60,000. Their combined household take-home is ₹2,10,000.
 
 Their recurring monthly shared expenses are standard for urban India:
 - **Apartment Rent:** ₹38,000
@@ -52,7 +52,7 @@ A strict 50/50 split forces the lower earner to live beyond their means while th
 
 ## The Proportional Split: Mathematical Fairness Meets Peace of Mind
 
-The antidote to 50/50 friction is proportional splitting: dividing expenses by earning power rather than headcount. Both partners shoulder the exact same percentage of their personal earnings toward shared living costs.
+The antidote to 50/50 arguments is proportional splitting: dividing expenses by earning power rather than headcount. Both partners shoulder the exact same percentage of their personal earnings toward shared living costs.
 
 Let us run the numbers for Aditi and Kunal:
 - **Combined Monthly Take-Home:** ₹1,50,000 + ₹60,000 = ₹2,10,000
@@ -67,11 +67,11 @@ Both partners now dedicate roughly one-third of their earnings to their joint ho
 
 Career trajectories in India rarely move in parallel. Whether one partner works in high-growth tech while the other builds an early-stage startup, proportional splitting keeps the relationship collaborative rather than transactional.
 
-## The "Yours, Mine, and Ours" 3-Account Engine
+## The "Yours, Mine, and Ours" 3-Account Setup
 
-Knowing your split ratio is great theory. But logging every ₹20 bunch of coriander into an expense app breeds ledger fatigue in under two months.
+Knowing your split ratio is great theory. But logging every minor vegetable purchase into an expense app breeds ledger fatigue in under two months.
 
-Enter the gold standard of modern domestic budgeting: **The 3-Account Architecture.**
+Enter the gold standard of modern domestic budgeting: **The 3-Account System.**
 
 ### Account 1: "Ours" (The Joint Operating Hub)
 This dedicated account handles collective life exclusively:
@@ -92,7 +92,7 @@ Keeping separate personal accounts preserves adult autonomy. When couples pool 1
 
 ## Navigating the Grey Zones: Debts, Families, and WFH Realities
 
-Even with a 3-account setup, real life throws curveballs. Here is how to navigate the three most common friction points.
+Even with a 3-account setup, real life throws curveballs. Here is how to navigate the three most common tricky situations.
 
 ### 1. Pre-Existing Debts and Family Remittances
 What happens if Kunal carries an education loan, or Aditi sends ₹15,000 home every month to support her retired parents in Lucknow?
@@ -109,16 +109,16 @@ Do not keep your joint account balance hovering near zero. Urban rentals bring s
 
 Seed your joint account with a collective buffer of ₹25,000 to ₹30,000 at the start. When unexpected bills land, the cushion absorbs the shock without triggering an emergency conference.
 
-## The Monthly "Chai & Cash" Date: Kill Resentment Early
+## The Monthly Financial Check-In: Kill Resentment Early
 
-Financial systems are living agreements that require regular tune-ups. Designate thirty minutes on the first Sunday of every month as your non-negotiable **"Chai & Cash"** check-in. Brew fresh ginger chai, order hot samosas, and open your shared banking app together.
+Financial systems are living agreements that require regular tune-ups. Designate thirty minutes on the first Sunday of every month as your non-negotiable monthly check-in. Sit down over coffee or tea and open your shared banking app together.
 
 This check-in is a collaborative pit stop to answer three simple questions:
 1. Did our joint account stay in the green, or did quick-commerce splurges push us into the red?
 2. Are there any irregular lump-sum bills coming up—like an annual vehicle insurance renewal or a wedding?
 3. Did either of our financial realities shift?
 
-That third question is vital. In dynamic economies, incomes fluctuate. If Aditi switches companies and snags a 30% raise, or Kunal transitions into freelancing, recalculating the split takes five minutes and keeps the arrangement equitable.
+That third question is essential. In dynamic economies, incomes fluctuate. If Aditi switches companies and snags a 30% raise, or Kunal transitions into freelancing, recalculating the split takes five minutes and keeps the arrangement equitable.
 
 Money talks do not have to feel like performance reviews. Framed with empathy, humor, and transparent structures, managing money together becomes what it was always meant to be: two teammates pulling in the same direction to build a comfortable, stress-free life.
 
@@ -128,7 +128,7 @@ Money talks do not have to feel like performance reviews. Framed with empathy, h
     <li>Calculate your combined net monthly income and find your equitable split ratio (e.g., 70/30 or 50/50).</li>
     <li>Open or designate a separate zero-balance operating bank account dedicated purely to shared rent, utilities, and groceries.</li>
     <li>Set up automated standing instructions for the 2nd of every month to fund the household pool right after salary day.</li>
-    <li>Lock in a recurring 30-minute monthly "Chai & Cash" chat to review runaway delivery expenses and plan upcoming festival buffers.</li>
+    <li>Lock in a recurring 30-minute monthly check-in to review runaway delivery expenses and plan upcoming festival buffers.</li>
   </ul>
 </div>
 

@@ -6,41 +6,33 @@ const launchpadPosts = await getCollection('launchpad');
 const wealthEnginePosts = await getCollection('wealth-engine');
 const bigDecisionsPosts = await getCollection('big-decisions');
 
-// Choose 3 articles from 1st pillar, 2 from 2nd pillar, 1 from 3rd pillar
-const selectedLaunchpadIds = [
-  'what-is-net-worth-and-how-to-calculate-it',
-  'how-lifestyle-inflation-erases-your-raises',
-  'good-debt-vs-bad-debt',
+// Curated Top 6 Most Impactful Articles across the 3 Pillars
+const topArticlesConfig = [
+  { pillar: 'launchpad', id: 'a_beginner_s_roadmap_to_personal_finance', pillarName: 'The Launchpad' },
+  { pillar: 'launchpad', id: 'why-savings-rate-beats-income', pillarName: 'The Launchpad' },
+  { pillar: 'wealth-engine', id: 'index-funds-vs-active-mutual-funds', pillarName: 'The Wealth Engine' },
+  { pillar: 'wealth-engine', id: 'global-market-volatility-guide', pillarName: 'The Wealth Engine' },
+  { pillar: 'wealth-engine', id: 'the-4-percent-rule-retirement', pillarName: 'The Wealth Engine' },
+  { pillar: 'big-decisions', id: 'renting-vs-buying-a-home', pillarName: 'The Big Decisions' },
 ];
-const p1Matches = selectedLaunchpadIds
-  .map((id) => launchpadPosts.find((p) => p.id === id))
+
+const allPostsMap: Record<string, any[]> = {
+  launchpad: launchpadPosts,
+  'wealth-engine': wealthEnginePosts,
+  'big-decisions': bigDecisionsPosts,
+};
+
+const featuredPosts = topArticlesConfig
+  .map((cfg) => {
+    const post = allPostsMap[cfg.pillar]?.find((p) => p.id === cfg.id);
+    if (!post) return null;
+    return {
+      ...post,
+      pillar: cfg.pillar,
+      pillarName: cfg.pillarName,
+    };
+  })
   .filter(Boolean);
-const p1Posts = (p1Matches.length === 3 ? p1Matches : launchpadPosts.slice(0, 3)).map((p) => ({
-  ...p,
-  pillar: 'launchpad',
-  pillarName: 'The Launchpad',
-}));
-
-const selectedWealthEngineIds = [
-  'wealth-habits-of-the-ultra-rich',
-  'stock-market-101-for-beginners',
-];
-const p2Matches = selectedWealthEngineIds
-  .map((id) => wealthEnginePosts.find((p) => p.id === id))
-  .filter(Boolean);
-const p2Posts = (p2Matches.length === 2 ? p2Matches : wealthEnginePosts.slice(0, 2)).map((p) => ({
-  ...p,
-  pillar: 'wealth-engine',
-  pillarName: 'The Wealth Engine',
-}));
-
-const p3Posts = bigDecisionsPosts.slice(0, 1).map((p) => ({
-  ...p,
-  pillar: 'big-decisions',
-  pillarName: 'The Big Decisions',
-}));
-
-const featuredPosts = [...p1Posts, ...p2Posts, ...p3Posts];
 ---
 
 <Layout title="Covinair Capital | The Family Wealth Playbook">
@@ -53,15 +45,22 @@ const featuredPosts = [...p1Posts, ...p2Posts, ...p3Posts];
     <div class="featured-grid">
       {featuredPosts.map((post) => (
         <article class="post-card">
-          <div class="card-header-meta">
-            <span class="section-label">{post.pillarName}</span>
-            <span class="dot">&bull;</span>
-            <span class="category">{post.data.category}</span>
+          {post.data.heroImage && (
+            <a href={`/${post.pillar}/${post.id}`} class="card-image-link" tabindex="-1" aria-hidden="true">
+              <img src={post.data.heroImage} alt={post.data.title} class="card-image" loading="lazy" />
+            </a>
+          )}
+          <div class="card-body">
+            <div class="card-header-meta">
+              <span class="section-label">{post.pillarName}</span>
+              <span class="dot">&bull;</span>
+              <span class="category">{post.data.category}</span>
+            </div>
+            <h2>
+              <a href={`/${post.pillar}/${post.id}`}>{post.data.title}</a>
+            </h2>
+            <p>{post.data.description}</p>
           </div>
-          <h2>
-            <a href={`/${post.pillar}/${post.id}`}>{post.data.title}</a>
-          </h2>
-          <p>{post.data.description}</p>
         </article>
       ))}
     </div>
@@ -107,14 +106,14 @@ const featuredPosts = [...p1Posts, ...p2Posts, ...p3Posts];
   .featured-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
 
   .post-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 12px;
-    padding: 1.75rem;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
@@ -124,6 +123,33 @@ const featuredPosts = [...p1Posts, ...p2Posts, ...p3Posts];
     background: var(--color-surface-hover);
     border-color: var(--color-primary-border);
     transform: translateY(-2px);
+  }
+
+  .card-image-link {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--color-surface-hover);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+  }
+
+  .post-card:hover .card-image {
+    transform: scale(1.02);
+  }
+
+  .card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   .card-header-meta {
@@ -151,7 +177,7 @@ const featuredPosts = [...p1Posts, ...p2Posts, ...p3Posts];
   }
 
   .post-card h2 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: 700;
     margin: 0.35rem 0 0.65rem;
     line-height: 1.35;

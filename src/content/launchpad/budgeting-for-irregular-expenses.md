@@ -115,7 +115,7 @@ To see the power of sinking funds, look at two colleagues in Bengaluru earning i
 | **Financial Leakage** | Pays ₹6,500+ in EMI interest, processing fees, and GST charges. | Earns ₹7,200 in interest on his parked sinking fund balances. |
 | **Emotional State** | High stress, festive arguments, and month-end dread. | Calm celebrations and complete control over household cash. |
 
-Vikram loses over ₹13,000 annually to interest charges and missed investment growth. Anand spends the exact same amount on his family, but sleeps soundly without financial friction.
+Vikram loses over ₹13,000 annually to interest charges and missed investment growth. Anand spends the exact same amount on his family, but sleeps soundly without financial stress or debt worries.
 
 ---
 

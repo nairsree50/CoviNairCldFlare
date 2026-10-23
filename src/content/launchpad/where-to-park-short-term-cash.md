@@ -24,7 +24,7 @@ Varun, a 29-year-old software team lead in Pune, sat at his desk staring at two 
 
 He had spent five disciplined years saving ₹20,00,000. In eighteen months, his builder expected that entire amount as the final registration down payment.
 
-Over cutting chai in the cafeteria, Varun discussed his timeline with his colleague Kunal—a zealous retail trader who watches candlestick charts during elevator rides. Kunal was shocked.
+Over lunch in the cafeteria, Varun discussed his timeline with his colleague Kunal—a retail trader who follows candlestick charts during elevator rides. Kunal was skeptical.
 
 "Bro, why leave ₹20 lakh in a 7% bank FD?" Kunal scoffed. "The market is flying! Put that cash into an aggressive mid-cap fund. Even a 20% jump hands you an extra ₹4,00,000. That funds your modular kitchen for free!"
 

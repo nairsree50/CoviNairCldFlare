@@ -1,6 +1,6 @@
 ---
 title: "Emergency Funds 101: How Much Do You Need?"
-description: "A sudden layoff, medical crisis, or flooded home engine shouldn't force you into high-interest debt. Here is your definitive guide to building a bulletproof Indian emergency fund."
+description: "A sudden layoff, medical crisis, or car breakdown shouldn't force you into high-interest debt. Here is your definitive guide to building a bulletproof Indian emergency fund."
 pubDate: 2026-10-14
 category: "Basics & Cash Flow"
 heroImage: "/images/emergency-funds-101.jpg"
@@ -59,7 +59,7 @@ A six-month fortress required ₹3,48,000; a nine-month shield was ₹5,22,000. 
 
 Once you build a cash cushion of several lakhs, your mind will concoct reasons to raid it. Liquid money has a mischievous gravity. 
 
-To keep your reserve intact, separate structural crises from emotional wants. A real financial emergency passes three criteria: it is unexpected, urgent, and vital for survival or livelihood.
+To keep your reserve intact, separate structural crises from emotional wants. A real financial emergency passes three criteria: it is unexpected, urgent, and essential for survival or livelihood.
 
 A sudden pink slip, unexpected medical co-pays at 2:00 AM, urgent family medical dashes, or a cracked laptop screen for remote work are true emergencies. They directly threaten your shelter, health, or ability to earn tomorrow.
 
@@ -92,7 +92,7 @@ Deploy this three-tier allocation:
 
 ## The "Never-Ever" Parking Zones
 
-Equally vital is knowing where not to store this cushion:
+Equally important is knowing where not to store this cushion:
 * **Equity Mutual Funds and Stocks:** Layoffs and economic distress frequently coincide with market downturns. Selling index funds when the Nifty drops 15% locks in painful, permanent capital destruction.
 * **Lock-in Vehicles (PPF and NPS):** PPF's 15-year lock-in makes it useless when rent is due on Monday.
 * **Physical Gold Jewelry:** Pawning family ornaments involves melting deductions, jeweler spreads, and intense emotional trauma.

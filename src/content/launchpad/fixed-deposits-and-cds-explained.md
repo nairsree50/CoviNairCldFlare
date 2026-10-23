@@ -12,7 +12,7 @@ heroImage: "/images/fixed-deposits-and-cds-explained.jpg"
   <ul class="summary-metrics">
     <li>🎯 The Tax Bite: A 7.4% FD drops to ~5.09% post-tax in the 30% tax bracket, trailing real consumer inflation.</li>
     <li>🎯 Sovereign Shield: Bank FDs carry RBI-backed DICGC insurance up to ₹5 lakh per depositor per bank.</li>
-    <li>🎯 Liquidity Engine: FD laddering staggers maturities across 1 to 5 years, providing cash flow without break penalties.</li>
+    <li>🎯 Liquidity Strategy: FD laddering staggers maturities across 1 to 5 years, providing cash flow without break penalties.</li>
   </ul>
 </div>
 
@@ -20,9 +20,9 @@ heroImage: "/images/fixed-deposits-and-cds-explained.jpg"
 
 ## The Steel Almirah and the Sacred Deposit Slip
 
-Sharma Ji sat on his balcony in Lucknow, savoring ginger tea and the crisp morning air. On the glass table rested a stiff, cream-colored document bearing an ornate gold border and the majestic seal of *Bharat Rashtriya Bank*. 
+Sharma Ji sat on his balcony in Lucknow, savoring ginger tea and the crisp morning air. On the glass table rested a stiff, cream-colored document bearing an ornate gold border and the majestic seal of State Bank of India. 
 
-To Sharma Ji, this wasn't mere paper. It was a ₹10,00,000 Fixed Deposit certificate locking in 7.4% annual interest for five years. It smelled of security, predictability, and thirty-two years of disciplined government service.
+To Sharma Ji, this was not mere paper. It was a ₹10,00,000 Fixed Deposit certificate locking in 7.4% annual interest for five years. It smelled of security, predictability, and thirty-two years of disciplined government service.
 
 Just then, his twenty-six-year-old daughter Meera walked out, laptop in hand. Meera was a senior product analyst at a Bengaluru fintech firm, someone who tracked algorithmic index rebalancing before breakfast. She glanced at the certificate, raised an eyebrow, and sighed with theatrical pity.
 
@@ -43,7 +43,7 @@ Before figuring out when a deposit makes sense, we have to look past the generic
 ### 1. Bank Fixed Deposits (FDs)
 The undisputed heavyweight champion of Indian savings. You deposit a lump sum for a defined tenure—ranging from 7 days to 10 years—at an agreed interest rate. The terms are carved in stone. Whether the stock market crashes by 40% or oil prices double, your scheduled commercial bank owes you every single promised rupee.
 
-Crucially, bank FDs enjoy statutory protection under the Deposit Insurance and Credit Guarantee Corporation (DICGC), an RBI subsidiary. Up to ₹5,00,000 per depositor across principal and accumulated interest is legally insured at every scheduled commercial and small finance bank.
+Under Indian banking law, bank deposits enjoy statutory protection under the Deposit Insurance and Credit Guarantee Corporation (DICGC), an RBI subsidiary. Up to ₹5,00,000 per depositor across principal and accumulated interest is legally insured at every scheduled commercial and small finance bank.
 
 ### 2. Recurring Deposits (RDs)
 Think of the Recurring Deposit as the original Indian SIP, invented decades before equity mutual funds captured the public imagination. Instead of parting with a lump sum upfront, you commit to depositing a fixed amount—say, ₹5,000 or ₹15,000—every month for six months to ten years. 
@@ -53,7 +53,7 @@ It earns the exact same compound interest as a standard fixed deposit. RDs are i
 ### 3. Corporate Fixed Deposits (Company FDs)
 Tempted by hoardings offering 8.8% to 9.5% interest? Welcome to the wilder frontier of Company Fixed Deposits. Non-banking financial companies (NBFCs) and housing finance corporations issue these deposits to raise capital directly from retail citizens.
 
-Here is the vital catch: Corporate FDs carry zero DICGC insurance. None. If the company hits a liquidity crisis or defaults, the government will not bail you out. You are an unsecured creditor standing in a very long queue. If you ever consider corporate deposits, demand an ironclad **CRISIL or ICRA AAA rating**, stick exclusively to established blue-chip conglomerates, and never allocate more than 10% to 15% of your fixed-income portfolio to them.
+Here is the major catch: Corporate FDs carry zero DICGC insurance. None. If the company hits a liquidity crisis or defaults, the government will not bail you out. You are an unsecured creditor standing in a very long queue. If you ever consider corporate deposits, demand an ironclad **CRISIL or ICRA AAA rating**, stick exclusively to established blue-chip conglomerates, and never allocate more than 10% to 15% of your fixed-income portfolio to them.
 
 ### 4. Certificates of Deposit (CDs)
 While bank FDs are retail contracts between you and a branch, Certificates of Deposit are negotiable, dematerialized money market instruments issued by scheduled banks to raise short-term institutional funds. 
@@ -108,13 +108,17 @@ To get that cash, Sharma Ji must prematurely break the entire ₹10 lakh deposit
 
 The antidote is an **FD Ladder**—a technique borrowed from institutional bond desks that eliminates liquidity bottlenecks.
 
-Instead of one ₹10,00,000 deposit, Sharma Ji splits his capital into five equal ₹2,00,000 tranches with staggered maturities:
+Instead of locking all ₹10,00,000 into a single 5-year deposit, Sharma Ji invests the full amount on Day 1 across five separate deposits with staggered tenures. 
 
-- **Tranche 1:** ₹2,00,000 in a 1-year FD
-- **Tranche 2:** ₹2,00,000 in a 2-year FD
-- **Tranche 3:** ₹2,00,000 in a 3-year FD
-- **Tranche 4:** ₹2,00,000 in a 4-year FD
-- **Tranche 5:** ₹2,00,000 in a 5-year FD
+A common misunderstanding is thinking you wait to invest each piece year after year, leaving cash idle in a savings account. In an FD ladder, **100% of your capital is deployed immediately on Day 1**. You simply open five separate deposits on the very same afternoon:
+
+- **Tranche 1 (Day 1):** ₹2,00,000 in a 1-year FD
+- **Tranche 2 (Day 1):** ₹2,00,000 in a 2-year FD
+- **Tranche 3 (Day 1):** ₹2,00,000 in a 3-year FD
+- **Tranche 4 (Day 1):** ₹2,00,000 in a 4-year FD
+- **Tranche 5 (Day 1):** ₹2,00,000 in a 5-year FD
+
+Because all five deposits start earning FD interest from Day 1, zero rupees sit idle in low-interest accounts.
 
 ### How the Ladder Works Over Time
 When Year 1 finishes, Tranche 1 matures. Sharma Ji now has ₹2,00,000 plus interest in cash. 

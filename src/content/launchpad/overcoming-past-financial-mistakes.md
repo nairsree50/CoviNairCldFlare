@@ -26,7 +26,7 @@ Few sensations match the cold knot in your stomach when your phone buzzes past m
 
 It is rarely good news. Most often, it is an automated SMS alerting you that an EMI auto-debit bounced, slapping you with a ₹590 penalty charge. Or worse, an aggressive notice from a collection desk regarding a spiraling credit card balance.
 
-You stare at the ceiling fan running catastrophic arithmetic in your head. *If I liquidate my PF, pawn a family gold chain, and cancel festival trips, will it be enough? What happened to me? I was supposed to be the smart one in the family.*
+You stare at the ceiling fan running bleak arithmetic in your head. *If I liquidate my PF, pawn a family gold chain, and cancel festival trips, will it be enough? What happened to me? I was supposed to be the smart one in the family.*
 
 In India, financial failure rarely feels like a simple mathematical deficit. It feels like an existential moral disgrace. 
 
@@ -133,9 +133,9 @@ The month you eliminate your most toxic high-interest debt, launch a modest **Di
 
 ## Reclaiming the Steering Wheel
 
-Five years after his catastrophic options crash, Manjunath's financial life is unrecognizable. 
+Five years after his options trading crash, Manjunath's financial life is unrecognizable. 
 
-He didn't recoup his losses through another speculative gamble. He upskilled, secured salary increments, systematically knocked off his loans, and automated steady index fund investments. More importantly, he opens his mobile banking app with complete serenity.
+He did not recoup his losses through another speculative gamble. He upskilled, secured salary increments, systematically knocked off his loans, and automated steady index fund investments. Today, he opens his mobile banking app with complete serenity.
 
 Past financial scars never disappear entirely. But scars are living proof that the wound healed. 
 

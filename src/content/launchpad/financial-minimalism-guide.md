@@ -72,7 +72,7 @@ Possessions do not take care of themselves.
 
 They must be cleaned, dusted, insured, serviced, repaired, and protected from monsoon moisture. When an appliance malfunctions, you spend your precious Saturday morning coordinating with service technicians, haggling over replacement parts, and waiting for delivery slots. 
 
-Your mental bandwidth is a finite, precious asset. The more objects you own, the more your mind is consumed by the friction of managing them.
+Your mental bandwidth is a finite, precious asset. The more objects you own, the more your mind is consumed by the chore of managing them.
 
 ### 3. Sunk Capital and Opportunity Cost
 Every rupee locked inside an idle consumer possession is a rupee that cannot buy units of a Nifty 50 index fund, purchase sovereign gold bonds, or earn compound interest in a high-yield liquid reserve. 

@@ -24,11 +24,11 @@ heroImage: "/images/student-loan-repayment-strategies.jpg"
 
 There is an intoxicating high that arrives on convocation day. You toss your square black cap into the humid air, take twenty selfies with your proud parents, and convince yourself that your newly minted postgraduate degree is a golden key to instant prosperity.
 
-Take Rohan, an ambitious twenty-four-year-old who graduated at the top of his class from the fictitious Apex Institute of Management in Mumbai. Within weeks, he joined a boutique consulting firm at the Bandra-Kurla Complex with a shiny cost-to-company package of ₹14 lakh per annum. 
+Take Rohan, an ambitious twenty-four-year-old who graduated at the top of his class from a business school in Mumbai. Within weeks, he joined a boutique consulting firm at the Bandra-Kurla Complex with a shiny cost-to-company package of ₹14 lakh per annum. 
 
-During his first month on the job, Rohan felt unstoppable. He rented a breezy flat in Andheri, upgraded his wardrobe to crisp formal shirts, and began ordering artisanal flat whites instead of his customary ₹15 roadside cutting chai.
+During his first month on the job, Rohan felt unstoppable. He rented a breezy flat in Andheri, upgraded his wardrobe to crisp formal shirts, and began ordering artisanal flat whites instead of his customary street coffee.
 
-Then, on the evening of his first salary credit, his smartphone vibrated with an ominous notification from Bharat National Bank:
+Then, on the evening of his first salary credit, his smartphone vibrated with an ominous notification from his education loan lender:
 
 *“Dear Customer, your education loan moratorium period ends this month. Your first EMI of ₹32,800 is scheduled for auto-debit on the 5th.”*
 
@@ -78,7 +78,7 @@ Unlike the crowded Section 80C bucket—which forces your EPF, ELSS mutual funds
 
 ### The 8-Year Clock
 
-This tax bonanza comes with one crucial caveat: the deduction is available for a maximum period of **eight consecutive assessment years**, beginning from the year you start repaying the loan, or until the interest is fully paid off—whichever comes first.
+This tax bonanza comes with one key caveat: the deduction is available for a maximum period of **eight consecutive assessment years**, beginning from the year you start repaying the loan, or until the interest is fully paid off—whichever comes first.
 
 If you stretch your loan repayment across twelve or fifteen years, any interest paid from year nine onwards receives zero tax relief. That means the tax system actively rewards borrowers who structure their debt to vanish within that eight-year window.
 
@@ -108,7 +108,7 @@ Here is the secret weapon: once you have completed your degree, landed a steady 
 
 You are no longer an unproven student with an empty resume; you are a salaried professional with measurable cash flow.
 
-Public sector giants like Bharat National Bank or premier private retail lenders routinely offer education loan balance transfer schemes at rates hovering between 8.8% and 9.75%.
+Public sector institutions like State Bank of India or premier private lenders routinely offer education loan balance transfer schemes at rates hovering between 8.8% and 9.75%.
 
 Consider a borrower carrying an outstanding balance of ₹25 lakh with an NBFC at 13.5% with seven years remaining. By refinancing that debt to a prime lender at 9.25%, the borrower slashes their monthly EMI from approximately ₹46,200 down to ₹40,800. 
 

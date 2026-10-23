@@ -22,7 +22,7 @@ heroImage: "/images/sinking-funds-for-stress-free-spending.jpg"
 
 Every October, Rahul and Priya—a tech architect and a brand consultant in Bengaluru—promise themselves that this festival season will be financially sane. With a combined monthly take-home pay of ₹2.4 lakhs and diligent equity SIPs, they consider their finances unshakeable.
 
-Then the Indian festive calendar arrives like an avalanche.
+Then the Indian festive calendar arrives in full force.
 
 First came Diwali: dry-fruit hampers for relatives, sweet boxes for building staff, festive attire, and last-minute flights home to Lucknow. Total damage: ₹65,000. 
 
@@ -30,7 +30,7 @@ Barely had the diyas cooled when wedding invitations flooded their WhatsApp. Two
 
 To round off the year, Priya’s four-year-old phone died mid-December, forcing an urgent ₹80,000 replacement.
 
-"Don't worry," Rahul whispered over morning cutting chai. "We'll swipe the card and convert it into a no-cost EMI."
+"Don't worry," Rahul said over breakfast. "We'll put it on the card and convert it to a no-cost EMI."
 
 Fast forward to January 10th. The credit card bill landed like a sledgehammer: ₹2.4 lakhs in total dues and fresh monthly commitments of ₹18,500 for the next nine months. To dodge a brutal 42% interest penalty, they paused their mutual fund SIPs, gutted their cash buffer, and spent January eating plain dal-khichdi.
 
@@ -46,7 +46,7 @@ They build a ₹3 lakh buffer in an auto-sweep deposit. Then a cousin announces 
 
 Relying on an emergency fund to bankroll lifestyle milestones is a psychological trap.
 
-An **Emergency Fund** is survival armor. It exists purely for catastrophic, unpredictable shocks: sudden job loss, hospital admissions, or flooded car engines. You touch that money with a heavy heart, and your sole objective is to never spend it.
+An **Emergency Fund** is survival armor. It exists purely for severe, unpredictable shocks: sudden job loss, hospital admissions, or flooded car engines. You touch that money with a heavy heart, and your sole objective is to never spend it.
 
 A **Sinking Fund**, by contrast, is your **pre-authorized, guilt-free spending pass**.
 
@@ -76,7 +76,7 @@ Attending an outstation Indian wedding is practically an asset class of its own.
 * **The Strategy:** Route ₹5,500 monthly into a dedicated wedding pot. When the invitation lands, you book your tickets instantly without checking your bank balance.
 
 ### 3. The Recharging Getaway (Goa or Himachal)
-Burnout is real. Escaping spreadsheets for a week in South Goa or a mountain homestay in Manali is vital for your mental health. Financing that trip on credit cards turns post-vacation bliss into instant panic.
+Burnout is real. Escaping spreadsheets for a week in South Goa or a mountain homestay in Manali is restorative for your mental health. Financing that trip on credit cards turns post-vacation bliss into instant panic.
 * **The Cost:** A comfortable five-day trip for two costs around ₹50,000.
 * **The Strategy:** Tuck away ₹5,000 monthly on salary day. In ten months, the holiday is paid for in full before your flight takes off.
 
@@ -109,7 +109,7 @@ Deploy this practical three-part blueprint:
 ### 1. Short-Term Recurring Deposits (RDs)
 For fixed dates like Diwali or an insurance renewal, the humble Recurring Deposit is unmatched.
 * **The Setup:** Open a 6- or 12-month RD via your banking app, scheduled to auto-debit on the 3rd of the month right after salary day.
-* **The Edge:** You lock in guaranteed 6.5% to 7.1% returns. Breaking an RD requires conscious intervention, adding just enough friction to kill impulse spending.
+* **The Edge:** You lock in guaranteed 6.5% to 7.1% returns. Breaking an RD requires conscious intervention, adding just enough hesitation to stop impulse spending.
 * **Pro Tip:** Nickname each RD in your banking app—*"Goa Sunsets"* or *"Diwali Gifting"*. Emotional labels dramatically reduce the temptation to loot the pot.
 
 ### 2. Secondary Digital Accounts with "Pockets"

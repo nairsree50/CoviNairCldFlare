@@ -30,7 +30,7 @@ The loan officer typed Vikram’s PAN card details into the system, clicked refr
 
 Vikram sat frozen. How could a software architect with money in fixed deposits and zero defaulted bills be treated like a subprime borrower?
 
-More importantly, look at the mathematics behind that 1.05% interest spread on a ₹65 lakh home loan over twenty years:
+Consider the mathematics behind that 1.05% interest spread on a ₹65 lakh home loan over twenty years:
 
 * **At 8.40% interest:** Monthly EMI = ₹56,013 | Total interest paid = ₹69.43 lakhs
 * **At 9.45% interest:** Monthly EMI = ₹60,422 | Total interest paid = ₹80.01 lakhs
@@ -88,7 +88,7 @@ This is the bedrock of your credit profile. Bureau algorithms scan your track re
 
 A single missed EMI on a two-wheeler loan or a delayed ₹2,500 credit card bill stays documented on your bureau report for thirty-six months. In bureau jargon, this is recorded as DPD (Days Past Due). When a lender sees "DPD 30" or "DPD 60" next to an account, warning lights flash.
 
-Even worse is a "Settlement." If you ever negotiate with a bank to clear an outstanding ₹80,000 balance by paying ₹45,000, the bank writes off the rest and reports the account as **Settled**, not **Closed**. To automated underwriting engines, a settlement smells like a partial default. It will depress your score for years.
+Even worse is a "Settlement." If you ever negotiate with a bank to clear an outstanding ₹80,000 balance by paying ₹45,000, the bank writes off the rest and reports the account as **Settled**, not **Closed**. To automated underwriting systems, a settlement smells like a partial default. It will depress your score for years.
 
 ### 2. Credit Utilization Ratio (30% Weight)
 

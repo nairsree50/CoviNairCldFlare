@@ -24,13 +24,13 @@ Every month follows an eerily familiar script across urban India.
 
 On the 30th evening, your smartphone chimes with the sweetest notification known to working humankind: *“Your salary account has been credited with ₹90,000.”* 
 
-For forty-eight glorious hours, you walk with the swagger of a tech baron. You pick up the tab for Friday night appetizers, order that artisanal roast coffee on QuickBite, and casually browse weekend staycations in Coorg. Your bank balance feels plump, and your financial potential feels limitless.
+For forty-eight glorious hours, you walk with the swagger of a tech baron. You pick up the tab for Friday night appetizers, order specialty coffee on a delivery app, and casually browse weekend staycations in Coorg. Your bank balance feels plump, and your financial potential feels limitless.
 
 Fast-forward twenty-six days. 
 
-It is the 26th of the month. You are standing at a local tea stall, hesitating before ordering a ₹15 ginger chai because you need to check if your UPI app will bounce. Your account balance looks like a forgotten four-digit pin code. 
+It is the 26th of the month. You are standing at a corner shop, hesitating before buying an afternoon snack because you need to check if your bank account has sufficient funds. Your account balance looks like a forgotten four-digit pin code. 
 
-There were no sudden hospital emergencies or bespoke splurges. Yet, your money has dissolved into the thin air of daily living. 
+There were no sudden hospital emergencies or luxury splurges. Yet, your money has dissolved into the thin air of daily living. 
 
 Meet Alok, a 28-year-old software engineer in Bengaluru. Every month, Alok swears by the same earnest promise: *“This month will be different. I will control my spending, live carefully, and whatever money is left in my account on the 29th, I will put directly into a mutual fund.”*
 
@@ -46,7 +46,7 @@ $$\text{Income} - \text{Expenses} = \text{Savings}$$
 
 It feels reasonable. You earn your salary, you cover your rent, you clear your electricity and broadband bills, you buy your groceries, and you stash whatever is left into a safe corner. 
 
-There is only one fatal flaw with this formula: in the real world of digital commerce and frictionless UPI payments, the value of **Savings** in that equation almost always rounds down to zero.
+There is only one fatal flaw with this formula: in the real world of digital commerce and instant UPI payments, the value of **Savings** in that equation almost always rounds down to zero.
 
 Think carefully about the lineup of people waiting for a cut of your hard-earned paycheck every month. 
 
@@ -124,7 +124,7 @@ When your auto-debits execute on the 2nd of the month, the money is whisked away
 Where should your automated savings go the moment they leave your primary salary account? Rather than dumping money into a generic bucket, route your monthly wealth allocation into three distinct vaults:
 
 - **The Fortress Vault:** If you do not yet have six months of essential living expenses saved, direct your first automated stream into a liquid mutual fund or a sweep-in fixed deposit. This ensures you never have to swipe a 40% interest credit card when medical surprises or career transitions arrive.
-- **The Compounding Engine:** Set up automatic monthly SIPs into low-cost, broad-market equity index funds tracking the Nifty 50 or total market index. This capital is locked away for your ten-to-fifteen-year horizon, compounding quietly behind the scenes while you focus on your day job.
+- **The Long-Term Growth Fund:** Set up automatic monthly SIPs into low-cost, broad-market equity index funds tracking the Nifty 50 or total market index. This capital is locked away for your ten-to-fifteen-year horizon, compounding quietly behind the scenes while you focus on your day job.
 - **The Sinking Fund for Big-Ticket Expenses:** Nothing shatters a monthly budget faster than irregular annual expenses—car insurance renewals, festival gifts during Diwali, or annual family holidays. Route a fixed monthly sum into a dedicated recurring deposit so these predictable costs never cannibalize your long-term equity SIPs.
 
 ## The Sweet Paradox of Guilt-Free Living

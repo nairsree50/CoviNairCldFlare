@@ -17,7 +17,7 @@ heroImage: "/images/what-is-net-worth-and-how-to-calculate-it.jpg"
 </div>
 
 <figure class="article-image-box">
-  <img src="/images/what-is-net-worth-and-how-to-calculate-it.jpg" alt="An Indian professional calculating personal net worth with a balance sheet comparing assets and liabilities over a cup of chai" loading="lazy" />
+  <img src="/images/what-is-net-worth-and-how-to-calculate-it.jpg" alt="An Indian professional calculating personal net worth with a balance sheet comparing assets and liabilities" loading="lazy" />
 </figure>
 
 ## The Grand Illusion of the Swanky German Car
@@ -72,7 +72,7 @@ Just like assets, liabilities generally fall into two broad camps:
 
 Every single rupee you owe on your credit card statement or Buy Now, Pay Later (BNPL) checkout app is a direct deduction from your freedom.
 
-## The ₹500 Chai Cup Test: What Does NOT Belong on Your Balance Sheet
+## The Depreciation Reality: What Does NOT Belong on Your Balance Sheet
 
 When calculating net worth for the first time, human ego invariably attempts to sneak personal consumption items onto the asset side of the ledger.
 
@@ -88,7 +88,7 @@ Unless an item can be sold within forty-eight hours to a reputable dealer for ve
 
 Now that the rules of engagement are clear, how do you actually run your audit this coming Sunday morning? 
 
-Brew yourself a fresh cup of ginger cardamom chai, find a quiet corner of your room, and open a clean spreadsheet or a fresh page in a notebook. Draw a line down the middle of the sheet: Assets on the left, Liabilities on the right.
+Find a quiet corner, open a clean spreadsheet or notebook, and prepare your numbers. Draw a line down the middle of the sheet: Assets on the left, Liabilities on the right.
 
 | Asset Category | Description | Estimated Value (₹) |
 | :--- | :--- | :--- |

@@ -11,7 +11,7 @@ heroImage: "/images/managing-money-on-irregular-income.jpg"
   <p class="summary-text">When your monthly income swings from ₹2,50,000 during festival rushes to ₹18,000 during post-holiday slumps, traditional budgeting collapses. Creating a holding buffer, paying yourself a steady salary, and leveraging Section 44ADA transforms erratic cash flow into lifelong financial stability.</p>
   <ul class="summary-metrics">
     <li>🎯 The Buffer Rule: Stashing 9 to 12 months of survival expenses to outlast client payment delays and dry seasons.</li>
-    <li>🎯 The Salary Architecture: Routing 100% of client invoices into a holding vault and paying yourself a fixed salary on the 1st.</li>
+    <li>🎯 The Salary System: Routing 100% of client invoices into a holding vault and paying yourself a fixed salary on the 1st.</li>
     <li>🎯 Presumptive Tax Magic: Declaring 50% profits under Section 44ADA to legally minimize bookkeeping and advance tax stress.</li>
   </ul>
 </div>
@@ -22,7 +22,7 @@ heroImage: "/images/managing-money-on-irregular-income.jpg"
 
 In the coastal alleys of Versova, Mumbai, 29-year-old freelance video editor Kabir spent October feeling like Dalal Street royalty. 
 
-Festive commercial campaigns had collided in an avalanche of rush edits, brand films, and social media reels. Between September and October, three agency retainers cleared simultaneously, flooding his bank account with ₹2,80,000. 
+Festive commercial campaigns had brought a rush of urgent edits, brand films, and social media reels. Between September and October, three agency retainers cleared simultaneously, flooding his bank account with ₹2,80,000. 
 
 Naturally, Kabir upgraded his lifestyle. He treated his friends to craft beers in Bandra, ordered artisanal cold brew every morning, tipped delivery riders generously, and bought studio headphones on EMI. For four weeks, he felt financially invincible.
 
@@ -44,7 +44,7 @@ The root cause of freelance financial anxiety is an innocent error: treating bus
 
 When an agency transfers ₹1,50,000 into your savings account, your brain triggers a dopamine rush. You see six digits on your phone and assume you have ₹1,50,000 to spend.
 
-In truth, that invoice is gross business revenue, not your personal take-home pay. Several silent claimants already have a lien on that cash before you buy a single cup of cutting chai:
+In truth, that invoice is gross business revenue, not your personal take-home pay. Several financial claimants already have a claim on that cash before you spend a single rupee:
 
 1. **The Tax Department:** Income tax (advance tax) and TDS deductions that must be settled with the government.
 2. **The GST Portal:** If you are GST-registered, that 18% tax component never belonged to you; you are merely an unpaid tax collector for the state.
@@ -55,7 +55,7 @@ When you spend directly out of your client collection account, your business loo
 
 ---
 
-## The Solution: The "Salary from Yourself" Architecture
+## The Solution: The "Salary from Yourself" System
 
 To survive unpredictable cash flow, you must sever the link between client remittances and personal living expenses. You need to build a private, one-person payroll department.
 
@@ -157,14 +157,14 @@ Once your 10-month survival runway is fully funded, declare a **Personal Profit 
 
 ## Professional Invoicing: Ending the "Payment in Process" Trap
 
-No financial architecture survives if clients treat you like an interest-free lending agency. In India, corporate accounts teams naturally pay squeaky wheels first.
+No financial foundation survives if clients treat you like an interest-free lending agency. In India, corporate accounts teams naturally pay squeaky wheels first.
 
 Enforce three basic commercial habits:
 1. **The 40-40-20 Milestone Structure:** Require a 40% advance before commencing work. Invoice 40% upon delivery of the first functional draft or cut. Reserve the final 20% balance against delivery of unwatermarked, high-resolution master files.
 2. **Net 15 Terms:** Avoid vague payment terms. State **"Payment Due: Net 15 Days"** clearly in bold on every invoice, alongside your bank coordinates and UPI QR code.
 3. **Structured Follow-Ups:** Send a polite reminder 3 days before the invoice is due, an inquiry on the due date, and a phone call to the finance manager on day 5 post-due date. Requesting your contracted fee is basic professional conduct.
 
-When cash flow chaos is eliminated, freelancing stops feeling like a high-wire circus act. You can enjoy your morning cutting chai, focus on your craft, and know your expenses are handled, your taxes are reserved, and your long-term wealth is steadily compounding.
+When cash flow unpredictability is managed, freelancing stops feeling like a high-wire circus act. You can focus on your craft with confidence, knowing your overhead is covered, your taxes are reserved, and your investments are compounding on schedule.
 
 <div class="todo-card">
   <h3>🛠️ Your Weekend Wealth Checklist</h3>

@@ -33,7 +33,7 @@ Like millions of salaried professionals across Mumbai, Bengaluru, Delhi-NCR, and
 Popularized by American legal scholar Elizabeth Warren in her book *All Your Worth*, the framework suggests a neat, foolproof division of your after-tax salary:
 - **50% for Needs**: The non-negotiables required to keep a roof over your head and food on the table.
 - **30% for Wants**: The fun stuff that makes waking up on Monday morning bearable.
-- **20% for Savings and Investments**: The wealth engine that builds your independence and protects you from economic storms.
+- **20% for Savings and Investments**: The wealth plan that builds your independence and protects you from economic storms.
 
 It sounds so clean, so elegant, so delightfully mathematical. 
 
@@ -54,7 +54,7 @@ If you live in a tier-1 Indian city to chase career growth, shelter is your bigg
 Western financial models assume an individualistic vacuum where adults are responsible purely for their own shelter and retirement. In India, family finances are deeply intertwined. Whether it is sending ₹8,000 home every month to support your retired parents in Bhopal, covering your mother's daily diabetes prescriptions, or pitching in for a younger sibling's engineering college semester fees, filial support is not an optional "lifestyle luxury." It is an emotional and moral non-negotiable that sits squarely in your life.
 
 ### 3. The Invisible UPI Bleed
-In the pre-digital era, spending money required the physical friction of visiting an ATM, feeling crisp hundred-rupee notes leave your palm, and seeing your leather wallet physically thin out. Today, UPI has transformed spending into a frictionless reflex. That ₹30 cutting chai, ₹180 quick-commerce iced tea delivered in eight minutes, ₹400 mid-day food delivery treat, and ₹2,500 weekend bar tab vanish with a casual fingerprint scan. By the middle of the month, hundreds of microscopic micro-transactions have quietly cannibalized your savings without a single major purchase ever taking place.
+In the pre-digital era, spending money required the effort of visiting an ATM, feeling crisp hundred-rupee notes leave your palm, and seeing your leather wallet physically thin out. Today, UPI has transformed spending into a effortless reflex. That ₹30 coffee, ₹180 quick-commerce snack delivered in ten minutes, ₹400 midday food delivery treat, and ₹2,500 weekend dining bill vanish with a quick scan. By the middle of the month, hundreds of micro-transactions have quietly cannibalized your savings without a single major purchase ever taking place.
 
 ---
 
@@ -71,7 +71,7 @@ Here is how ordinary everyday expenses sort out in modern Indian reality:
 | **Rent / Home Loan EMI** | ✅ Need (Basic shelter) | ❌ Excess space / Luxury amenities | A clean, safe home is essential; paying double rent just to brag about an infinity pool on your terrace is a lifestyle choice. |
 | **Groceries & Provisions** | ✅ Need (Pantry staples) | ❌ Gourmet treats & daily quick apps | Atta, dal, sabzi, eggs, and cooking oil are survival needs. Imported organic berries and midnight snack deliveries are wants. |
 | **Commute & Mobility** | ✅ Need (Reliable transit) | ❌ Daily peak-hour surge cabs | A metro smartcard, local train pass, or fuel for a sensible commuter bike is a need. Daily ₹450 cab rides because of snooze alarms are wants. |
-| **Internet & Mobile** | ✅ Need (WFH connectivity) | ❌ Gigabit fiber + 8 OTT bundles | 100 Mbps broadband to attend office calls is vital; paying ₹2,200 monthly for unviewed movie streaming bundles is discretionary entertainment. |
+| **Internet & Mobile** | ✅ Need (WFH connectivity) | ❌ Gigabit fiber + 8 OTT bundles | 100 Mbps broadband to attend office calls is essential; paying ₹2,200 monthly for unviewed movie streaming bundles is discretionary entertainment. |
 | **Healthcare & Insurance** | ✅ Need (Pure term & health cover) | ❌ Fancy wellness fads | Term life insurance and family health cover are lifelines. Fancy detox teas and unverified gym supplements are lifestyle wants. |
 | **Parents' Monthly Support** | ✅ Need (Family duty) | ❌ Extravagant gifting | Ensuring parents have a roof, food, and daily prescriptions is a family need. Lavish gold gifting on distant birthdays belongs in wants. |
 
@@ -83,14 +83,14 @@ Once he stripped off the excuses, his real numbers came into sharp focus.
 
 ## The Adaptive Ratios: Tailoring the Rule to Your Pincode
 
-The beauty of the 50/30/20 rule is that it was never meant to be a rigid religious dogma. It is an operational framework. If your city or life stage makes a strict 50% cap on essentials impossible, you don't throw your hands up and abandon budgeting altogether. You adapt the dials while protecting the engine.
+The beauty of the 50/30/20 rule is that it was never meant to be a rigid religious dogma. It is an operational framework. If your city or life stage makes a strict 50% cap on essentials impossible, you don't throw your hands up and abandon budgeting altogether. You adapt the dials while protecting your wealth allocation.
 
 Here are the three real-world adaptations that actually work across Indian cities:
 
 ### 1. The Metro Squeeze: The 60/20/20 Split
 *Best for: Young professionals renting in Mumbai, Bengaluru, Delhi-NCR, or Hyderabad.*
 
-When tier-1 urban rents eat 30-35% of your pay, your essentials bucket will naturally swell to roughly 60%. The golden secret to financial survival here is **protecting your 20% savings engine at all costs**. 
+When tier-1 urban rents eat 30-35% of your pay, your essentials bucket will naturally swell to roughly 60%. The golden secret to financial survival here is **protecting your 20% savings plan at all costs**. 
 
 Instead of letting your savings shrink to zero, you compress your Wants from 30% down to 20%. You still enjoy dinners out, weekend movies, and coffee with friends, but you practice deliberate trade-offs. You trade three expensive pub nights for house gatherings, or switch from peak-time cabs to the metro line.
 
@@ -121,11 +121,11 @@ By keeping your essential needs anchored around 50% and your lifestyle wants cap
 
 ---
 
-## The Three-Bank-Account Automation Engine
+## The Three-Bank-Account Automation System
 
 Trying to manage your 50/30/20 budget inside a single bank account using sheer willpower is an express ticket to failure. When your salary, rent payments, mutual fund investments, and late-night pizza orders all mingle in one giant pool of liquidity, your brain loses track of what is safe to spend.
 
-The solution is an automated **Three-Account Architecture**. You do not need an MBA or complicated spreadsheet macros to set this up—just three standard savings accounts with auto-transfer mandates:
+The solution is an automated **Three-Account System**. You do not need an MBA or complicated spreadsheet macros to set this up—just three standard savings accounts with auto-transfer mandates:
 
 ```
 [ Primary Salary Account: The Fortress (Needs) ]
@@ -173,7 +173,7 @@ Suppose Vikram maintains that 20% discipline (₹16,000 monthly) across his work
 
 All of this generational stability does not require launching a tech startup or guessing the next multibagger small-cap stock. It is the predictable harvest of defending that simple, non-negotiable 20% wealth allocation against the daily noise of consumer lifestyle inflation.
 
-Budgeting is not about living like an ascetic monk, denying yourself cutting chai, or cutting your own hair in front of a bathroom mirror. It is simply about intentionality. The 50/30/20 framework gives your hard-earned rupees a structured mission: it ensures your present necessities are honored, your everyday happiness is celebrated, and your future freedom is guaranteed.
+Budgeting is not about living like an ascetic monk, denying yourself everyday comforts, or cutting your own hair in front of a bathroom mirror. It is simply about intentionality. The 50/30/20 framework gives your hard-earned rupees a structured mission: it ensures your present necessities are honored, your everyday happiness is celebrated, and your future freedom is guaranteed.
 
 <div class="todo-card">
   <h3>🛠️ Your Weekend Wealth Checklist</h3>

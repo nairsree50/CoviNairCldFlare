@@ -54,7 +54,7 @@ You do not need tighter discipline. You need an automated assembly line that rem
 
 ---
 
-## The Architecture of the Three-Account Machine
+## How to Set Up the Three-Account System
 
 The automated pipeline relies on a timeless rule: pay yourself first. Instead of treating your future self like a beggar hoping for leftover change, your investments become your primary creditor on Day 2.
 
@@ -68,8 +68,8 @@ This is your corporate salary account where your employer credits your monthly p
 
 This account anchors your medium and long-term security across two engines:
 
-* **Growth Engine:** Automated NACH mandates routing funds into equity index funds, flexi-cap mutual fund SIPs, PPF, or NPS.
-* **Sinking Fund Engine:** A liquid mutual fund accumulating predictable annual expenses—car insurance, festival shopping, vacations, and taxes.
+* **Growth Plan:** Automated NACH mandates routing funds into equity index funds, flexi-cap mutual fund SIPs, PPF, or NPS.
+* **Sinking Fund Plan:** A liquid mutual fund accumulating predictable annual expenses—car insurance, festival shopping, vacations, and taxes.
 
 ### 3. Account C: The UPI Spending Sandbox
 
@@ -119,11 +119,11 @@ Her brain automatically sets a mental spending rhythm of roughly ₹800 per day 
 
 ## Decoupling the Camera from the Vault: The UPI Firewall
 
-UPI is a payment masterpiece, but behaviorally, it is a frictionless spending trap.
+UPI is a payment masterpiece, but behaviorally, it is a effortless spending trap.
 
-When your phone's camera is linked directly to your life savings, psychological friction drops to zero. You are simply scanning a QR code and punching in a PIN.
+When your phone's camera is linked directly to your life savings, natural hesitation drops to zero. You are simply scanning a QR code and punching in a PIN.
 
-By restricting UPI access exclusively to your secondary Account C, you establish two vital protections:
+By restricting UPI access exclusively to your secondary Account C, you establish two essential protections:
 
 * **Fraud Defense:** If you ever encounter a malicious payment gateway or QR phishing trap, bad actors can only reach the pocket allowance in Account C. Your primary savings in Accounts A and B remain untouched.
 * **The "Hard Stop" Reality Check:** When your UPI balance runs dry near month-end, transactions return an immediate *"Insufficient Funds"* alert. This provides a clear behavioral boundary. You cannot accidentally bleed away your rent money or equity folios.
@@ -145,7 +145,7 @@ The solution is the **Buffer Reservoir Model**:
 
 ## The 10% Step-Up Rule: Beating Lifestyle Creep
 
-Fixing your current savings rate is vital, but protecting future salary increments from lifestyle inflation is equally critical.
+Fixing your current savings rate is necessary, but protecting future salary increments from lifestyle inflation is equally critical.
 
 When you receive an annual increment, your lifestyle upgrades instinctively: pricier restaurants and luxury cabs. Before long, you earn 30% more but still save nothing.
 
@@ -168,7 +168,7 @@ In truth, sustainable wealth creation is quiet, mechanical, and wonderfully hand
 
 When your automated financial pipeline is running, you never have to fret over whether you can afford a spontaneous dinner with friends. You never spend your weekends sorting crumpled paper receipts or dreading month-end bank balance alerts.
 
-Step out of the cockpit. Let bank algorithms handle the heavy lifting, enjoy your cutting chai, and watch your net worth quietly compound in the background.
+Step out of the cockpit. Let bank automation handle the heavy lifting, and watch your net worth compound steadily in the background.
 
 <div class="todo-card">
   <h3>🛠️ Your Weekend Wealth Checklist</h3>
