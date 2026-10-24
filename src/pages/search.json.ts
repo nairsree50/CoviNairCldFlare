@@ -2,21 +2,23 @@ import { getCollection } from 'astro:content';
 
 export const prerender = true;
 
-function stripMarkdown(md?: string): string {
-  if (!md) return '';
-  return md
-    .replace(/```[\s\S]*?```/g, ' ')
-    .replace(/`([^`]+)`/g, '$1')
-    .replace(/!\[.*?\]\(.*?\)/g, ' ')
-    .replace(/\[([^\]]+)\]\(.*?\)/g, '$1')
-    .replace(/#{1,6}\s+/g, ' ')
-    .replace(/(\*\*|__)(.*?)\1/g, '$2')
-    .replace(/(\*|_)(.*?)\1/g, '$2')
-    .replace(/>\s+/g, ' ')
-    .replace(/[-+*]\s+/g, ' ')
+function stripMarkdownAndHtml(raw?: string): string {
+  if (!raw) return '';
+  return raw
+    .replace(/<[^>]*>/g, ' ')           // strip all HTML tags like <div>, <p>, <span>
+    .replace(/```[\s\S]*?```/g, ' ')     // strip code blocks
+    .replace(/`([^`]+)`/g, '$1')         // inline code
+    .replace(/!\[.*?\]\(.*?\)/g, ' ')    // images
+    .replace(/\[([^\]]+)\]\(.*?\)/g, '$1') // links
+    .replace(/#{1,6}\s+/g, ' ')          // headers
+    .replace(/(\*\*|__)(.*?)\1/g, '$2')  // bold
+    .replace(/(\*|_)(.*?)\1/g, '$2')     // italic
+    .replace(/>\s+/g, ' ')               // blockquotes
+    .replace(/[-+*]\s+/g, ' ')           // lists
     .replace(/\d+\.\s+/g, ' ')
-    .replace(/\|/g, ' ')
-    .replace(/\s+/g, ' ')
+    .replace(/\|/g, ' ')                 // tables
+    .replace(/&[a-z]+;/gi, ' ')          // html entities
+    .replace(/\s+/g, ' ')                // collapse whitespace
     .trim();
 }
 
@@ -47,7 +49,7 @@ export async function GET() {
       section: 'The Launchpad',
       url: `/launchpad/${doc.id}`,
       tags: [],
-      content: stripMarkdown(doc.body),
+      content: stripMarkdownAndHtml(doc.body),
     });
   }
 
@@ -60,7 +62,7 @@ export async function GET() {
       section: 'The Wealth Engine',
       url: `/wealth-engine/${doc.id}`,
       tags: [],
-      content: stripMarkdown(doc.body),
+      content: stripMarkdownAndHtml(doc.body),
     });
   }
 
@@ -73,7 +75,7 @@ export async function GET() {
       section: 'The Big Decisions',
       url: `/big-decisions/${doc.id}`,
       tags: [],
-      content: stripMarkdown(doc.body),
+      content: stripMarkdownAndHtml(doc.body),
     });
   }
 

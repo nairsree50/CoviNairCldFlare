@@ -1,22 +1,20 @@
 ---
-// SearchModal.astro - Fast client-side search across all articles and reference docs
+// SearchModal.astro - Minimalist search showing matched topics across main site
 ---
 
 <div id="search-modal-container">
-  <!-- Search Trigger Button -->
-  <button id="search-trigger-btn" type="button" class="search-trigger" aria-label="Search articles and topics (Press Ctrl+K)">
+  <!-- Minimalist Search Trigger Icon Button (No text strings or Ctrl K) -->
+  <button id="search-trigger-btn" type="button" class="search-trigger-btn" aria-label="Search">
     <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="11" cy="11" r="8"></circle>
       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
     </svg>
-    <span class="search-placeholder">Search topics, strings...</span>
-    <kbd class="search-shortcut"><span class="cmd-key">Ctrl</span> K</kbd>
   </button>
 
   <!-- Backdrop & Dialog -->
   <div id="search-dialog-backdrop" class="search-backdrop hidden" aria-hidden="true">
-    <div class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="search-input">
-      <!-- Input bar -->
+    <div class="search-dialog" role="dialog" aria-modal="true">
+      <!-- Input bar with NO default placeholder text -->
       <div class="search-header">
         <svg class="search-icon active-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
@@ -25,27 +23,22 @@
         <input 
           id="search-input" 
           type="search" 
-          placeholder="Search articles, keywords, formulas, strings..." 
           autocomplete="off" 
-          spellcheck="false"
+          spellcheck="false" 
+          aria-label="Search"
         />
-        <button id="search-close-btn" type="button" class="search-close" aria-label="Close search">
-          <kbd>ESC</kbd>
+        <button id="search-close-btn" type="button" class="search-close" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
         </button>
       </div>
 
-      <!-- Results List -->
+      <!-- Results List showing topics only -->
       <div id="search-results-wrapper" class="search-results-wrapper">
-        <div id="search-status" class="search-status">Type a keyword or phrase to search...</div>
+        <div id="search-status" class="search-status"></div>
         <ul id="search-results-list" class="search-results-list" role="listbox"></ul>
-      </div>
-
-      <!-- Search Footer / Shortcuts -->
-      <div class="search-footer">
-        <div class="shortcut-tip"><kbd>↑</kbd> <kbd>↓</kbd> <span>Navigate</span></div>
-        <div class="shortcut-tip"><kbd>↵</kbd> <span>Select</span></div>
-        <div class="shortcut-tip"><kbd>ESC</kbd> <span>Close</span></div>
-        <div id="search-count" class="search-count"></div>
       </div>
     </div>
   </div>
@@ -76,16 +69,7 @@
   const closeBtn = document.getElementById('search-close-btn');
   const resultsList = document.getElementById('search-results-list');
   const statusMsg = document.getElementById('search-status');
-  const countDisplay = document.getElementById('search-count');
 
-  // Detect Mac to show ⌘K instead of Ctrl K
-  const isMac = typeof navigator !== 'undefined' && /Mac|iPod|iPhone|iPad/.test(navigator.platform);
-  const cmdKeyEl = document.querySelector('.cmd-key');
-  if (cmdKeyEl && isMac) {
-    cmdKeyEl.textContent = '⌘';
-  }
-
-  // Pre-load or fetch search index
   async function loadSearchIndex() {
     if (searchIndex || isFetching) return;
     isFetching = true;
@@ -95,10 +79,10 @@
       rawItems = await res.json();
 
       searchIndex = new MiniSearch({
-        fields: ['title', 'description', 'tags', 'category', 'section', 'content'],
-        storeFields: ['id', 'title', 'description', 'category', 'section', 'url', 'tags', 'content'],
+        fields: ['title', 'description', 'category', 'section', 'content'],
+        storeFields: ['id', 'title', 'category', 'section', 'url'],
         searchOptions: {
-          boost: { title: 3, tags: 2, category: 1.5, description: 1.5, content: 1 },
+          boost: { title: 4, category: 2, description: 1.5, content: 1 },
           prefix: true,
           fuzzy: 0.2,
         },
@@ -107,7 +91,6 @@
       searchIndex.addAll(rawItems);
     } catch (err) {
       console.error('Search index initialization error:', err);
-      if (statusMsg) statusMsg.textContent = 'Unable to load search index.';
     } finally {
       isFetching = false;
     }
@@ -133,10 +116,9 @@
     searchInput.value = '';
     if (resultsList) resultsList.innerHTML = '';
     if (statusMsg) {
-      statusMsg.textContent = 'Type a keyword or phrase to search...';
-      statusMsg.style.display = 'block';
+      statusMsg.textContent = '';
+      statusMsg.style.display = 'none';
     }
-    if (countDisplay) countDisplay.textContent = '';
     selectedIndex = -1;
   }
 
@@ -147,48 +129,6 @@
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
-  }
-
-  function extractSnippet(content: string, query: string): string {
-    if (!content || !query) return '';
-    const cleanContent = content.trim();
-    const q = query.trim().toLowerCase();
-    const lower = cleanContent.toLowerCase();
-    
-    // Find first occurrence of any query token
-    const tokens = q.split(/\s+/).filter(t => t.length > 1);
-    let matchIndex = -1;
-    let matchedToken = '';
-
-    for (const token of tokens) {
-      const idx = lower.indexOf(token);
-      if (idx !== -1 && (matchIndex === -1 || idx < matchIndex)) {
-        matchIndex = idx;
-        matchedToken = token;
-      }
-    }
-
-    if (matchIndex === -1) {
-      // Return start of content as fallback
-      const snippet = cleanContent.slice(0, 110);
-      return escapeHtml(snippet) + (cleanContent.length > 110 ? '...' : '');
-    }
-
-    const start = Math.max(0, matchIndex - 50);
-    const end = Math.min(cleanContent.length, matchIndex + matchedToken.length + 60);
-    let snippet = cleanContent.substring(start, end);
-
-    if (start > 0) snippet = '...' + snippet;
-    if (end < cleanContent.length) snippet = snippet + '...';
-
-    // Highlight matches safely
-    let safeSnippet = escapeHtml(snippet);
-    for (const token of tokens) {
-      const regex = new RegExp(`(${token.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-      safeSnippet = safeSnippet.replace(regex, '<mark>$1</mark>');
-    }
-
-    return safeSnippet;
   }
 
   function highlightMatches(text: string, query: string): string {
@@ -203,20 +143,19 @@
   }
 
   function performSearch(query: string) {
-    if (!resultsList || !statusMsg || !countDisplay) return;
+    if (!resultsList || !statusMsg) return;
 
     if (!query) {
       resultsList.innerHTML = '';
-      statusMsg.style.display = 'block';
-      statusMsg.textContent = 'Type a keyword or phrase to search...';
-      countDisplay.textContent = '';
+      statusMsg.textContent = '';
+      statusMsg.style.display = 'none';
       selectedIndex = -1;
       return;
     }
 
     if (!searchIndex) {
       statusMsg.style.display = 'block';
-      statusMsg.textContent = 'Loading index...';
+      statusMsg.textContent = 'Loading...';
       return;
     }
 
@@ -225,38 +164,32 @@
     if (results.length === 0) {
       resultsList.innerHTML = '';
       statusMsg.style.display = 'block';
-      statusMsg.textContent = `No results found for "${query}".`;
-      countDisplay.textContent = '0 results';
+      statusMsg.textContent = 'No matching topics found';
       selectedIndex = -1;
       return;
     }
 
     statusMsg.style.display = 'none';
-    countDisplay.textContent = `${results.length} result${results.length === 1 ? '' : 's'}`;
 
+    // Show up to 15 matching topics
     const displayed = results.slice(0, 15);
     selectedIndex = 0;
 
     resultsList.innerHTML = displayed.map((res, index) => {
       const item = res as unknown as SearchItem;
       const titleHighlighted = highlightMatches(item.title, query);
-      const snippet = extractSnippet(item.content || item.description, query);
-      const categoryBadge = item.section || item.category || 'Article';
+      const sectionBadge = item.section || item.category || 'Article';
 
       return `
         <li class="search-result-item ${index === 0 ? 'selected' : ''}" role="option" data-url="${item.url}" data-index="${index}">
           <a href="${item.url}" class="result-link">
-            <div class="result-header">
-              <span class="result-badge">${escapeHtml(categoryBadge)}</span>
-              <span class="result-title">${titleHighlighted}</span>
-            </div>
-            ${snippet ? `<p class="result-snippet">${snippet}</p>` : ''}
+            <span class="result-badge">${escapeHtml(sectionBadge)}</span>
+            <span class="result-title">${titleHighlighted}</span>
           </a>
         </li>
       `;
     }).join('');
 
-    // Add click listeners to items
     const items = resultsList.querySelectorAll('.search-result-item');
     items.forEach((itemEl) => {
       itemEl.addEventListener('mouseenter', () => {
@@ -300,7 +233,6 @@
   // Event Listeners
   if (triggerBtn) {
     triggerBtn.addEventListener('click', openSearch);
-    // Preload index when mouse hovers over search trigger
     triggerBtn.addEventListener('mouseenter', loadSearchIndex);
   }
 
@@ -323,9 +255,7 @@
     });
   }
 
-  // Global Keyboard Shortcuts
   window.addEventListener('keydown', (e) => {
-    // Open on Ctrl+K / Cmd+K
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
       if (backdrop && !backdrop.classList.contains('hidden')) {
@@ -336,7 +266,6 @@
       return;
     }
 
-    // Open on '/' key if not currently in an input/textarea
     if (e.key === '/' && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA') {
       if (backdrop && backdrop.classList.contains('hidden')) {
         e.preventDefault();
@@ -345,7 +274,6 @@
       }
     }
 
-    // Modal navigation when active
     if (backdrop && !backdrop.classList.contains('hidden')) {
       if (e.key === 'Escape') {
         e.preventDefault();
@@ -365,55 +293,30 @@
 </script>
 
 <style>
-  /* Search Trigger in Header */
-  .search-trigger {
+  /* Minimalist Search Trigger Button */
+  .search-trigger-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.4rem 0.75rem;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 8px;
     color: var(--color-text-muted);
-    font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.15s ease;
-    user-select: none;
   }
 
-  .search-trigger:hover {
+  .search-trigger-btn:hover {
     background: var(--color-surface-hover);
     border-color: #cbd5e1;
-    color: var(--color-text);
+    color: var(--color-text-heading);
   }
 
   .search-icon {
     flex-shrink: 0;
-    color: var(--color-text-muted);
-  }
-
-  .search-placeholder {
-    display: inline;
-  }
-
-  @media (max-width: 640px) {
-    .search-placeholder {
-      display: none;
-    }
-  }
-
-  .search-shortcut {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.15rem;
-    font-size: 0.7rem;
-    font-family: inherit;
-    font-weight: 600;
-    color: var(--color-text-muted);
-    background: #ffffff;
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    padding: 0.1rem 0.35rem;
   }
 
   /* Modal Backdrop */
@@ -421,13 +324,12 @@
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background-color: rgba(15, 23, 42, 0.5);
+    background-color: rgba(15, 23, 42, 0.45);
     backdrop-filter: blur(4px);
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: 4rem 1rem 1rem 1rem;
-    opacity: 1;
+    padding: 5rem 1rem 1rem 1rem;
     transition: opacity 0.15s ease;
   }
 
@@ -437,25 +339,25 @@
     pointer-events: none;
   }
 
-  /* Modal Dialog */
+  /* Dialog Container */
   .search-dialog {
     width: 100%;
-    max-width: 640px;
+    max-width: 580px;
     background: #ffffff;
     border: 1px solid var(--color-border);
     border-radius: 12px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    max-height: 80vh;
-    animation: searchPopIn 0.15s ease-out;
+    max-height: 75vh;
+    animation: searchPopIn 0.12s ease-out;
   }
 
   @keyframes searchPopIn {
     from {
       opacity: 0;
-      transform: translateY(-8px) scale(0.98);
+      transform: translateY(-6px) scale(0.99);
     }
     to {
       opacity: 1;
@@ -463,11 +365,11 @@
     }
   }
 
-  /* Header with Input */
+  /* Header Input Bar */
   .search-header {
     display: flex;
     align-items: center;
-    padding: 0.85rem 1rem;
+    padding: 0.85rem 1.15rem;
     gap: 0.75rem;
     border-bottom: 1px solid var(--color-border);
     background: #ffffff;
@@ -482,17 +384,12 @@
     flex: 1;
     border: none;
     outline: none;
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--color-text-heading);
     background: transparent;
     font-family: inherit;
   }
 
-  #search-input::placeholder {
-    color: #9ca3af;
-  }
-
-  /* Remove clear icon in webkit */
   #search-input::-webkit-search-cancel-button {
     display: none;
   }
@@ -501,67 +398,60 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0;
+    color: var(--color-text-muted);
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: color 0.15s;
   }
 
-  .search-close kbd {
-    font-size: 0.7rem;
-    font-family: inherit;
-    color: var(--color-text-muted);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
+  .search-close:hover {
+    color: var(--color-text-heading);
   }
 
   /* Results List */
   .search-results-wrapper {
     overflow-y: auto;
-    padding: 0.5rem;
     max-height: 55vh;
+    padding: 0.35rem 0;
   }
 
   .search-status {
-    padding: 2.5rem 1rem;
+    padding: 1.5rem 1rem;
     text-align: center;
     color: var(--color-text-muted);
     font-size: 0.9rem;
+    display: none;
   }
 
   .search-results-list {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0.35rem 0.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.2rem;
   }
 
   .search-result-item {
-    border-radius: 8px;
+    border-radius: 6px;
     transition: background 0.12s ease;
-    border: 1px solid transparent;
   }
 
   .search-result-item.selected,
   .search-result-item:hover {
     background: var(--color-primary-soft);
-    border-color: var(--color-primary-border);
   }
 
   .result-link {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     padding: 0.65rem 0.85rem;
     text-decoration: none;
     color: inherit;
-  }
-
-  .result-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.25rem;
-    flex-wrap: wrap;
   }
 
   .result-badge {
@@ -569,29 +459,24 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    background: #e2e8f0;
+    background: #f1f5f9;
     color: #475569;
-    padding: 0.15rem 0.45rem;
+    padding: 0.2rem 0.5rem;
     border-radius: 4px;
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .search-result-item.selected .result-badge {
-    background: #bfdbfe;
-    color: #1e40af;
+    background: #dbeafe;
+    color: #1d4ed8;
   }
 
   .result-title {
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 0.925rem;
+    font-weight: 500;
     color: var(--color-text-heading);
-  }
-
-  .result-snippet {
-    font-size: 0.825rem;
-    color: var(--color-text-muted);
-    line-height: 1.4;
-    margin-top: 0.2rem;
+    line-height: 1.35;
   }
 
   :global(.search-result-item mark) {
@@ -602,43 +487,9 @@
     font-weight: 600;
   }
 
-  /* Footer */
-  .search-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.6rem 1rem;
-    background: var(--color-surface);
-    border-top: 1px solid var(--color-border);
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
-  }
-
-  .shortcut-tip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  .shortcut-tip kbd {
-    font-size: 0.65rem;
-    background: #ffffff;
-    border: 1px solid var(--color-border);
-    border-radius: 3px;
-    padding: 0.1rem 0.3rem;
-  }
-
-  .search-count {
-    margin-left: auto;
-    font-weight: 500;
-  }
-
   @media (max-width: 640px) {
     .search-backdrop {
-      padding: 0.5rem;
-    }
-    .search-footer .shortcut-tip {
-      display: none;
+      padding: 1rem 0.75rem;
     }
   }
 </style>
