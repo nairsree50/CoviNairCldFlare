@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.3.4",
-    "astro": "^7.3.8"
+    "astro": "^7.3.8",
+    "minisearch": "^7.2.0"
   }
 }

@@ -1,4 +1,6 @@
 ---
+import SearchModal from '../components/SearchModal.astro';
+
 interface Props {
   title?: string;
   description?: string;
@@ -70,11 +72,14 @@ const {
           Covinair Capital <span class="brand-sub">| The Family Wealth Playbook</span>
         </a>
 
-        <nav class="nav-links">
-          <a href="/launchpad" class="nav-link">The Launchpad</a>
-          <a href="/wealth-engine" class="nav-link">The Wealth Engine</a>
-          <a href="/big-decisions" class="nav-link">The Big Decisions</a>
-        </nav>
+        <div class="nav-actions">
+          <nav class="nav-links">
+            <a href="/launchpad" class="nav-link">The Launchpad</a>
+            <a href="/wealth-engine" class="nav-link">The Wealth Engine</a>
+            <a href="/big-decisions" class="nav-link">The Big Decisions</a>
+          </nav>
+          <SearchModal />
+        </div>
       </div>
     </header>
 
@@ -123,6 +128,12 @@ const {
     color: var(--color-text-muted);
   }
 
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
   .nav-links {
     display: flex;
     align-items: center;
@@ -164,13 +175,22 @@ const {
   @media (max-width: 860px) {
     .nav-container {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: stretch;
+      gap: 1rem;
+    }
+
+    .nav-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      width: 100%;
     }
 
     .nav-links {
       flex-wrap: wrap;
       gap: 1rem;
-      width: 100%;
     }
 
     .btn-start {
