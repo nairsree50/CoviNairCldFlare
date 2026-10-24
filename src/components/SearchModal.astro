@@ -178,12 +178,10 @@
     resultsList.innerHTML = displayed.map((res, index) => {
       const item = res as unknown as SearchItem;
       const titleHighlighted = highlightMatches(item.title, query);
-      const sectionBadge = item.section || item.category || 'Article';
 
       return `
         <li class="search-result-item ${index === 0 ? 'selected' : ''}" role="option" data-url="${item.url}" data-index="${index}">
           <a href="${item.url}" class="result-link">
-            <span class="result-badge">${escapeHtml(sectionBadge)}</span>
             <span class="result-title">${titleHighlighted}</span>
           </a>
         </li>
@@ -446,37 +444,17 @@
   }
 
   .result-link {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.65rem 0.85rem;
+    display: block;
+    padding: 0.7rem 0.9rem;
     text-decoration: none;
     color: inherit;
   }
 
-  .result-badge {
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    background: #f1f5f9;
-    color: #475569;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .search-result-item.selected .result-badge {
-    background: #dbeafe;
-    color: #1d4ed8;
-  }
-
   .result-title {
-    font-size: 0.925rem;
+    font-size: 0.95rem;
     font-weight: 500;
     color: var(--color-text-heading);
-    line-height: 1.35;
+    line-height: 1.4;
   }
 
   :global(.search-result-item mark) {
