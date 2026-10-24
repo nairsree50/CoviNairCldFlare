@@ -1,0 +1,298 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Trading & Investment | The Practitioner's Reference Hub", 
+  description = "A comprehensive, self-contained reference manual for CMT concepts, market regimes, technical indicators, price action, options, and fundamentals." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <style is:global>
+      :root {
+        --color-bg: #ffffff;
+        --color-surface: #f9fafb;
+        --color-surface-hover: #f3f4f6;
+        --color-border: #e5e7eb;
+        --color-text: #1f2937;
+        --color-text-heading: #111827;
+        --color-text-muted: #6b7280;
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+        --color-primary-soft: #eff6ff;
+        --color-primary-border: #bfdbfe;
+        --color-link: #2563eb;
+        --color-accent: #059669;
+        --color-danger: #dc2626;
+        --color-bullish: #059669;
+        --color-bearish: #dc2626;
+        --nav-bg: rgba(255, 255, 255, 0.95);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: var(--color-text-heading);
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        background: var(--color-surface);
+        padding: 0.15rem 0.35rem;
+        border-radius: 4px;
+        border: 1px solid var(--color-border);
+      }
+
+      pre {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        background: #111827;
+        color: #f3f4f6;
+        padding: 1.25rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin: 1.5rem 0;
+      }
+
+      pre code {
+        background: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        font-size: 0.925rem;
+      }
+
+      th, td {
+        border: 1px solid var(--color-border);
+        padding: 0.75rem 1rem;
+        text-align: left;
+      }
+
+      th {
+        background: var(--color-surface);
+        font-weight: 600;
+        color: var(--color-text-heading);
+      }
+
+      tr:nth-child(even) td {
+        background-color: #fafbfc;
+      }
+
+      blockquote {
+        border-left: 4px solid var(--color-primary);
+        background: var(--color-primary-soft);
+        padding: 0.75rem 1.25rem;
+        margin: 1.25rem 0;
+        border-radius: 0 6px 6px 0;
+        color: var(--color-text);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="/learn" class="brand">
+          <span class="brand-badge">PRO</span>
+          Trading & Investment <span class="brand-sub">| Reference Manual</span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="/learn" class="nav-link">Overview</a>
+          <a href="/learn/cmt" class="nav-link">Regimes & CMT</a>
+          <a href="/learn/indicators" class="nav-link">Indicators</a>
+          <a href="/learn/price-action" class="nav-link">Price Action</a>
+          <a href="/learn/derivatives" class="nav-link">Derivatives</a>
+          <a href="/learn/fundamentals" class="nav-link">Fundamentals</a>
+          <a href="/learn/risk-and-systems" class="nav-link">Risk & Desk</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-wrapper">
+      <slot />
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-modules">
+          <span>Self-Contained Practitioner Reference Hub</span>
+          <div class="footer-links">
+            <a href="/learn/cmt">CMT & Regimes</a> &bull; 
+            <a href="/learn/indicators">Indicators</a> &bull; 
+            <a href="/learn/price-action">Price Action</a> &bull; 
+            <a href="/learn/derivatives">Options & Derivatives</a> &bull; 
+            <a href="/learn/fundamentals">Fundamentals</a> &bull; 
+            <a href="/learn/risk-and-systems">Risk & Systems</a>
+          </div>
+        </div>
+        <p class="disclaimer">
+          Educational trading & investment reference for peer research. Not financial or investment advice.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0.875rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .brand {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--color-text-heading);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .brand-badge {
+    font-size: 0.7rem;
+    font-weight: 800;
+    background: var(--color-primary);
+    color: #ffffff;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .brand-sub {
+    font-weight: 400;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .nav-link {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+
+  .main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer {
+    border-top: 1px solid var(--color-border);
+    padding: 2.5rem 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    background: var(--color-surface);
+  }
+
+  .footer-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .footer-modules {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-links a {
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-primary);
+  }
+
+  .disclaimer {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 980px) {
+    .nav-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .nav-links {
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      width: 100%;
+    }
+  }
+</style>

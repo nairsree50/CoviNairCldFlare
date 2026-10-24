@@ -1,0 +1,596 @@
+---
+import { getCollection, render } from 'astro:content';
+import LearnLayout from '../../layouts/LearnLayout.astro';
+import LearnSidebar from '../../components/learn/LearnSidebar.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('learn');
+
+  const sections = [
+    { id: 'cmt', title: 'Market Regimes & CMT Foundations', description: 'Dow Theory tenets, trending vs mean-reverting regimes, market structure (BOS/CHoCH), S&R polarity, Fibonacci & Elliott wave cycles.' },
+    { id: 'indicators', title: 'Technical Indicators Reference Manual', description: 'Mathematical formulas, parameters, market regimes, and actionable trade rules for momentum, trend, volatility, and volume indicators.' },
+    { id: 'price-action', title: 'Price Action & Pattern Codex', description: 'Candlestick auction footprint, classical chart patterns, and modern institutional liquidity concepts.' },
+    { id: 'derivatives', title: 'Derivatives & Options Mastery', description: 'Futures and options mechanics, option chain analysis, Black-Scholes pricing, the Greeks, and core options strategies.' },
+    { id: 'fundamentals', title: 'Fundamental Investment Analysis', description: 'Financial statements forensic analysis, valuation multiples, capital efficiency, economic moats, and macroeconomic business cycles.' },
+    { id: 'risk-and-systems', title: 'Risk Management & Trading Desk', description: 'Capital preservation math, position sizing, R-multiple expectancy, technical/volatility stops, and trading psychology.' },
+  ];
+
+  const chapterPaths = posts.map((post) => {
+    // Sort all posts across curriculum to provide natural next/prev linear order
+    const sectionOrderMap: Record<string, number> = {
+      cmt: 1,
+      indicators: 2,
+      'price-action': 3,
+      derivatives: 4,
+      fundamentals: 5,
+      'risk-and-systems': 6,
+    };
+
+    const sortedAll = [...posts].sort((a, b) => {
+      const secA = sectionOrderMap[a.data.section] || 99;
+      const secB = sectionOrderMap[b.data.section] || 99;
+      if (secA !== secB) return secA - secB;
+      return a.data.order - b.data.order;
+    });
+
+    const currentIndex = sortedAll.findIndex((p) => p.id === post.id);
+    const prevPost = currentIndex > 0 ? sortedAll[currentIndex - 1] : null;
+    const nextPost = currentIndex < sortedAll.length - 1 ? sortedAll[currentIndex + 1] : null;
+
+    return {
+      params: { slug: post.id },
+      props: {
+        type: 'chapter' as const,
+        post,
+        prevPost,
+        nextPost,
+      },
+    };
+  });
+
+  const sectionPaths = sections.map((sec) => ({
+    params: { slug: sec.id },
+    props: {
+      type: 'section' as const,
+      section: sec,
+      sectionPosts: posts
+        .filter((p) => p.data.section === sec.id)
+        .sort((a, b) => a.data.order - b.data.order),
+    },
+  }));
+
+  return [...chapterPaths, ...sectionPaths];
+}
+
+const props = Astro.props;
+let Content = null;
+let headings: { depth: number; slug: string; text: string }[] = [];
+
+if (props.type === 'chapter') {
+  const result = await render(props.post);
+  Content = result.Content;
+  headings = result.headings || [];
+}
+---
+
+<LearnLayout 
+  title={props.type === 'chapter' ? `${props.post.data.title} | Trading & Investment` : `${props.section.title} | Trading & Investment`}
+  description={props.type === 'chapter' ? props.post.data.description : props.section.description}
+>
+  <div class="reader-shell">
+    <!-- Left Sidebar Navigation -->
+    <LearnSidebar currentSlug={props.type === 'chapter' ? props.post.id : props.section.id} />
+
+    <!-- Center Content Column -->
+    <main class="reader-main">
+      {props.type === 'chapter' && Content && (
+        <article class="chapter-content">
+          <!-- Breadcrumb (100% self-contained) -->
+          <nav class="reader-breadcrumb">
+            <a href="/learn">Reference Hub</a>
+            <span class="sep">/</span>
+            <a href={`/learn/${props.post.data.section}`}>{props.post.data.sectionTitle}</a>
+            <span class="sep">/</span>
+            <span class="current">{props.post.data.title}</span>
+          </nav>
+
+          <!-- Chapter Header -->
+          <header class="chapter-header">
+            <div class="meta-row">
+              <span class="section-tag">{props.post.data.sectionTitle}</span>
+              <span class="difficulty-badge" data-level={props.post.data.difficulty}>
+                {props.post.data.difficulty}
+              </span>
+              <span class="order-badge">Chapter {props.post.data.order}</span>
+            </div>
+            <h1 class="chapter-title">{props.post.data.title}</h1>
+            <p class="chapter-desc">{props.post.data.description}</p>
+
+            {props.post.data.keyTakeaways && props.post.data.keyTakeaways.length > 0 && (
+              <div class="key-takeaways">
+                <div class="takeaways-header">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 11 12 14 22 4"></polyline>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                  </svg>
+                  <span>Key Principles at a Glance</span>
+                </div>
+                <ul>
+                  {props.post.data.keyTakeaways.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </header>
+
+          <!-- Rendered Markdown Body -->
+          <div class="markdown-body">
+            <Content />
+          </div>
+
+          <!-- Linear Chapter Navigation (Prev / Next) -->
+          <nav class="chapter-pagination">
+            {props.prevPost ? (
+              <a href={`/learn/${props.prevPost.id}`} class="pagination-btn prev">
+                <span class="pagination-label">&larr; Previous Guide</span>
+                <span class="pagination-title">{props.prevPost.data.title}</span>
+              </a>
+            ) : <div />}
+
+            {props.nextPost ? (
+              <a href={`/learn/${props.nextPost.id}`} class="pagination-btn next">
+                <span class="pagination-label">Next Guide &rarr;</span>
+                <span class="pagination-title">{props.nextPost.data.title}</span>
+              </a>
+            ) : <div />}
+          </nav>
+        </article>
+      )}
+
+      {props.type === 'section' && (
+        <div class="section-hub">
+          <!-- Breadcrumb -->
+          <nav class="reader-breadcrumb">
+            <a href="/learn">Reference Hub</a>
+            <span class="sep">/</span>
+            <span class="current">{props.section.title}</span>
+          </nav>
+
+          <header class="section-header">
+            <span class="section-tag">Curriculum Track</span>
+            <h1 class="chapter-title">{props.section.title}</h1>
+            <p class="chapter-desc">{props.section.description}</p>
+          </header>
+
+          <div class="section-guides-grid">
+            {props.sectionPosts.map((post) => (
+              <article class="section-guide-card">
+                <div class="guide-card-top">
+                  <span class="guide-order-num">Master Guide {post.data.order}</span>
+                  <span class="difficulty-badge" data-level={post.data.difficulty}>{post.data.difficulty}</span>
+                </div>
+                <h2>
+                  <a href={`/learn/${post.id}`}>{post.data.title}</a>
+                </h2>
+                <p>{post.data.description}</p>
+                {post.data.keyTakeaways && post.data.keyTakeaways.length > 0 && (
+                  <ul class="mini-takeaways">
+                    {post.data.keyTakeaways.slice(0, 3).map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+                <a href={`/learn/${post.id}`} class="read-guide-btn">
+                  Read Master Guide &rarr;
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+    </main>
+
+    <!-- Right Side In-Page Table of Contents (Desktop) -->
+    {props.type === 'chapter' && headings.filter(h => h.depth <= 3).length > 0 && (
+      <aside class="reader-toc">
+        <div class="toc-sticky">
+          <div class="toc-header">On this page</div>
+          <nav class="toc-nav">
+            <ul>
+              {headings.filter(h => h.depth === 2 || h.depth === 3).map((h) => (
+                <li class={`toc-item depth-${h.depth}`}>
+                  <a href={`#${h.slug}`}>{h.text}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </aside>
+    )}
+  </div>
+</LearnLayout>
+
+<style>
+  .reader-shell {
+    display: flex;
+    max-width: 1480px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .reader-main {
+    flex: 1;
+    min-width: 0;
+    padding: 2rem 2.5rem 5rem;
+  }
+
+  .reader-breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .reader-breadcrumb a {
+    color: var(--color-primary);
+  }
+
+  .reader-breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .reader-breadcrumb .sep {
+    color: var(--color-border);
+  }
+
+  .reader-breadcrumb .current {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .chapter-header {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    background: var(--color-primary-soft);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .difficulty-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+  }
+
+  .difficulty-badge[data-level="Beginner"] {
+    background: #ecfdf5;
+    color: #047857;
+    border-color: #a7f3d0;
+  }
+  .difficulty-badge[data-level="Intermediate"] {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border-color: #bfdbfe;
+  }
+  .difficulty-badge[data-level="Advanced"] {
+    background: #fef2f2;
+    color: #b91c1c;
+    border-color: #fecaca;
+  }
+
+  .order-badge {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .chapter-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-heading);
+  }
+
+  .chapter-desc {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .key-takeaways {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .takeaways-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-heading);
+    margin-bottom: 0.75rem;
+  }
+
+  .takeaways-header svg {
+    color: var(--color-primary);
+  }
+
+  .key-takeaways ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.925rem;
+    color: var(--color-text);
+  }
+
+  /* Markdown Typography & Structure */
+  .markdown-body {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text);
+  }
+
+  .markdown-body :global(h2) {
+    font-size: 1.65rem;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+    scroll-margin-top: 80px;
+  }
+
+  .markdown-body :global(h3) {
+    font-size: 1.3rem;
+    margin: 2rem 0 0.75rem;
+    scroll-margin-top: 80px;
+  }
+
+  .markdown-body :global(p) {
+    margin-bottom: 1.25rem;
+  }
+
+  .markdown-body :global(ul), .markdown-body :global(ol) {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .markdown-body :global(li) {
+    margin-bottom: 0.4rem;
+  }
+
+  .chapter-pagination {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .pagination-btn {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+    transition: all 0.15s ease;
+    max-width: 320px;
+    flex: 1;
+  }
+
+  .pagination-btn.next {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .pagination-btn:hover {
+    border-color: var(--color-primary-border);
+    background: var(--color-primary-soft);
+    transform: translateY(-2px);
+  }
+
+  .pagination-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+  }
+
+  .pagination-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  /* Section landing view */
+  .section-hub {
+    max-width: 960px;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-guides-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .section-guide-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: border-color 0.15s;
+  }
+
+  .section-guide-card:hover {
+    border-color: var(--color-primary-border);
+  }
+
+  .guide-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .guide-order-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+  }
+
+  .section-guide-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-guide-card h2 a {
+    color: var(--color-text-heading);
+  }
+
+  .section-guide-card h2 a:hover {
+    color: var(--color-primary);
+  }
+
+  .section-guide-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .mini-takeaways {
+    margin: 0 0 1.25rem;
+    padding-left: 1.25rem;
+    font-size: 0.875rem;
+    color: var(--color-text);
+  }
+
+  .mini-takeaways li {
+    margin-bottom: 0.3rem;
+  }
+
+  .read-guide-btn {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .read-guide-btn:hover {
+    text-decoration: underline;
+  }
+
+  /* Right Side TOC */
+  .reader-toc {
+    width: 240px;
+    flex-shrink: 0;
+    padding: 2.5rem 1.5rem 2.5rem 0;
+    display: block;
+  }
+
+  .toc-sticky {
+    position: sticky;
+    top: 85px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+
+  .toc-header {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .toc-item a {
+    font-size: 0.825rem;
+    color: var(--color-text-muted);
+    line-height: 1.35;
+    display: block;
+    transition: color 0.15s;
+  }
+
+  .toc-item.depth-3 a {
+    padding-left: 0.75rem;
+    font-size: 0.775rem;
+  }
+
+  .toc-item a:hover {
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 1200px) {
+    .reader-toc {
+      display: none;
+    }
+  }
+
+  @media (max-width: 980px) {
+    .reader-shell {
+      flex-direction: column;
+    }
+    .reader-main {
+      padding: 1.5rem 1rem 3rem;
+    }
+    .chapter-title {
+      font-size: 1.75rem;
+    }
+    .chapter-pagination {
+      flex-direction: column;
+    }
+    .pagination-btn.next {
+      text-align: left;
+    }
+  }
+</style>

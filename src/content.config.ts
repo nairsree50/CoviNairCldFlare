@@ -9,6 +9,17 @@ const articleSchema = z.object({
   heroImage: z.string().optional(),
 });
 
+const learnSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  section: z.string(), // e.g., 'cmt', 'indicators', 'price-action', 'derivatives', 'fundamentals', 'risk-and-systems'
+  sectionTitle: z.string(), // e.g., 'Market Regimes & CMT'
+  order: z.number().default(1),
+  difficulty: z.enum(['Beginner', 'Intermediate', 'Advanced']).default('Intermediate'),
+  tags: z.array(z.string()).optional(),
+  keyTakeaways: z.array(z.string()).optional(),
+});
+
 export const collections = {
   launchpad: defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/launchpad' }),
@@ -21,5 +32,9 @@ export const collections = {
   'big-decisions': defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/big-decisions' }),
     schema: articleSchema,
+  }),
+  learn: defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/learn' }),
+    schema: learnSchema,
   }),
 };

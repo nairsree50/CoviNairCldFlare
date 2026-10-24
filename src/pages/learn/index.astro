@@ -1,0 +1,436 @@
+---
+import { getCollection } from 'astro:content';
+import LearnLayout from '../../layouts/LearnLayout.astro';
+
+const allLearnPosts = await getCollection('learn');
+
+const modules = [
+  {
+    id: 'cmt',
+    title: 'Market Regimes & CMT Foundations',
+    badge: 'Core Theory',
+    description: 'Dow Theory tenets, trending vs mean-reverting regimes, market structure (BOS/CHoCH), S&R polarity, Fibonacci & Elliott wave cycles.',
+    posts: allLearnPosts.filter((p) => p.data.section === 'cmt').sort((a, b) => a.data.order - b.data.order),
+  },
+  {
+    id: 'indicators',
+    title: 'Technical Indicators Reference',
+    badge: 'Quantitative',
+    description: 'Mathematical construction, formulas, regime compatibility, and trading rules for Moving Averages, MACD, RSI, ATR, Bollinger Bands & VWAP.',
+    posts: allLearnPosts.filter((p) => p.data.section === 'indicators').sort((a, b) => a.data.order - b.data.order),
+  },
+  {
+    id: 'price-action',
+    title: 'Price Action & Pattern Codex',
+    badge: 'Structural',
+    description: 'Candlestick auction footprint, classical chart reversals/continuations, and modern institutional ICT/SMC fair value gaps and liquidity sweeps.',
+    posts: allLearnPosts.filter((p) => p.data.section === 'price-action').sort((a, b) => a.data.order - b.data.order),
+  },
+  {
+    id: 'derivatives',
+    title: 'Derivatives, Options & Volatility',
+    badge: 'Derivatives',
+    description: 'Futures & options mechanics, option chain analysis (OI & PCR), Black-Scholes pricing, the Greeks, Implied Volatility (IV) skew, and core spreads.',
+    posts: allLearnPosts.filter((p) => p.data.section === 'derivatives').sort((a, b) => a.data.order - b.data.order),
+  },
+  {
+    id: 'fundamentals',
+    title: 'Fundamental Investment Analysis',
+    badge: 'Valuation',
+    description: 'Financial statement forensic checks (P&L, Balance Sheet, Cash Flow), valuation metrics (P/E, EV/EBITDA, ROCE), economic moats, and macroeconomic business cycles.',
+    posts: allLearnPosts.filter((p) => p.data.section === 'fundamentals').sort((a, b) => a.data.order - b.data.order),
+  },
+  {
+    id: 'risk-and-systems',
+    title: 'Risk Management & Trading Desk',
+    badge: 'Risk Control',
+    description: 'The 1% and 2% risk rules, position sizing math, R-multiple expectancy, technical/volatility stops, cognitive trading biases, and desk cheat sheets.',
+    posts: allLearnPosts.filter((p) => p.data.section === 'risk-and-systems').sort((a, b) => a.data.order - b.data.order),
+  },
+];
+---
+
+<LearnLayout 
+  title="Trading & Investment | The Practitioner's Reference Manual"
+  description="A self-contained reference hub for CMT concepts, market regimes, indicators, price action, options, and fundamentals."
+>
+  <div class="learn-hub">
+    <!-- Hero Header -->
+    <header class="hub-hero">
+      <div class="hero-badge">PRACTITIONER REFERENCE MANUAL</div>
+      <h1 class="hero-title">Trading & Investment</h1>
+      <p class="hero-subtitle">
+        A structured, high-density handbook of technical market concepts, CMT curriculum theory, derivatives mechanics, and institutional equity valuation.
+      </p>
+
+      <!-- Search & Filter Bar -->
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Quick search guides (e.g. RSI divergence, Greeks, Dow Theory, Fair Value Gap, ROCE)..." 
+          autocomplete="off"
+        />
+      </div>
+    </header>
+
+    <!-- Fast Cheatsheet Bar -->
+    <section class="quick-desk-banner">
+      <div class="banner-content">
+        <span class="banner-tag">DESK REFERENCE</span>
+        <div>
+          <h3>Trading Desk Quick Lookup Matrix</h3>
+          <p>Instant tabular lookup for pattern triggers, indicator failure modes, option payoff formulas, and risk limits.</p>
+        </div>
+      </div>
+      <a href="/learn/risk-and-systems/02-trading-desk-quick-reference-cheatsheet" class="btn-desk-jump">
+        Open Cheat Sheet &rarr;
+      </a>
+    </section>
+
+    <!-- Modules Grid -->
+    <section class="modules-grid" id="modules-container">
+      {modules.map((mod) => (
+        <div class="module-card" data-module={mod.id}>
+          <div class="card-header">
+            <span class="module-badge">{mod.badge}</span>
+            <span class="guide-count">{mod.posts.length} Master Guides</span>
+          </div>
+          <h2 class="card-title">
+            <a href={`/learn/${mod.id}`}>{mod.title}</a>
+          </h2>
+          <p class="card-desc">{mod.description}</p>
+
+          <div class="guides-sublist">
+            <div class="sublist-heading">Master Reference Guides:</div>
+            <ul>
+              {mod.posts.map((post) => (
+                <li class="guide-item" data-title={post.data.title.toLowerCase()} data-desc={post.data.description.toLowerCase()}>
+                  <a href={`/learn/${post.id}`} class="guide-link">
+                    <span class="guide-order">{post.data.order}</span>
+                    <span class="guide-name">{post.data.title}</span>
+                    <span class="guide-arrow">&rarr;</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </section>
+  </div>
+</LearnLayout>
+
+<script is:inline>
+  const searchInput = document.getElementById('search-input');
+  const guideItems = document.querySelectorAll('.guide-item');
+  const moduleCards = document.querySelectorAll('.module-card');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+
+      if (!query) {
+        guideItems.forEach(item => item.style.display = 'block');
+        moduleCards.forEach(card => card.style.display = 'flex');
+        return;
+      }
+
+      moduleCards.forEach(card => {
+        let hasMatch = false;
+        const items = card.querySelectorAll('.guide-item');
+        items.forEach(item => {
+          const title = item.getAttribute('data-title') || '';
+          const desc = item.getAttribute('data-desc') || '';
+          if (title.includes(query) || desc.includes(query)) {
+            item.style.display = 'block';
+            hasMatch = true;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        card.style.display = hasMatch ? 'flex' : 'none';
+      });
+    });
+  }
+</script>
+
+<style>
+  .learn-hub {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  .hub-hero {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 3rem;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-primary);
+    background: var(--color-primary-soft);
+    border: 1px solid var(--color-primary-border);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--color-text-heading);
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .search-box:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-soft);
+  }
+
+  .search-box input {
+    border: none;
+    background: transparent;
+    font-size: 0.95rem;
+    width: 100%;
+    color: var(--color-text-heading);
+    outline: none;
+  }
+
+  .search-box svg {
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  .quick-desk-banner {
+    background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+    border: 1px solid var(--color-primary-border);
+    border-radius: 10px;
+    padding: 1.25rem 1.75rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .banner-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: 0.06em;
+  }
+
+  .quick-desk-banner h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .quick-desk-banner p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .btn-desk-jump {
+    background: var(--color-primary);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.65rem 1.25rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+
+  .btn-desk-jump:hover {
+    background: var(--color-primary-hover);
+  }
+
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .module-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+
+  .module-card:hover {
+    border-color: var(--color-primary-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .module-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    background: var(--color-primary-soft);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .guide-count {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-title a {
+    color: var(--color-text-heading);
+    transition: color 0.15s;
+  }
+
+  .card-title a:hover {
+    color: var(--color-primary);
+  }
+
+  .card-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
+
+  .guides-sublist {
+    margin-top: auto;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+  }
+
+  .sublist-heading {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.65rem;
+  }
+
+  .guides-sublist ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .guide-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.875rem;
+    color: var(--color-text);
+    background: var(--color-surface);
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .guide-order {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+
+  .guide-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .guide-arrow {
+    color: var(--color-text-muted);
+    transition: transform 0.15s;
+  }
+
+  .guide-link:hover {
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+  }
+
+  .guide-link:hover .guide-arrow {
+    transform: translateX(3px);
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.1rem;
+    }
+    .modules-grid {
+      grid-template-columns: 1fr;
+    }
+    .quick-desk-banner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

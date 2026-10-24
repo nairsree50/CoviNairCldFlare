@@ -1,0 +1,198 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  currentSlug?: string;
+}
+
+const { currentSlug } = Astro.props;
+
+const allLearnPosts = await getCollection('learn');
+
+// Define the exact desired order of modules
+const sectionOrder = [
+  { id: 'cmt', title: '1. Market Regimes & CMT' },
+  { id: 'indicators', title: '2. Indicators Reference' },
+  { id: 'price-action', title: '3. Price Action Codex' },
+  { id: 'derivatives', title: '4. Derivatives & Options' },
+  { id: 'fundamentals', title: '5. Fundamental Analysis' },
+  { id: 'risk-and-systems', title: '6. Risk & Trading Systems' },
+];
+
+const groupedPosts = sectionOrder.map((section) => {
+  const posts = allLearnPosts
+    .filter((p) => p.data.section === section.id)
+    .sort((a, b) => a.data.order - b.data.order);
+  return {
+    ...section,
+    posts,
+  };
+});
+---
+
+<aside class="sidebar-wrapper">
+  <div class="sidebar-header">
+    <a href="/learn" class="overview-link" class:list={{ active: !currentSlug }}>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect>
+        <rect x="3" y="14" width="7" height="7"></rect>
+      </svg>
+      Curriculum Overview
+    </a>
+  </div>
+
+  <nav class="sidebar-nav">
+    {groupedPosts.map((group) => (
+      <div class="module-group">
+        <div class="module-title">
+          <a href={`/learn/${group.id}`} class="module-heading-link">
+            {group.title}
+          </a>
+        </div>
+        <ul class="module-list">
+          {group.posts.map((post) => {
+            const isActive = currentSlug === post.id;
+            return (
+              <li>
+                <a 
+                  href={`/learn/${post.id}`} 
+                  class="chapter-link" 
+                  class:list={{ active: isActive }}
+                >
+                  <span class="chapter-order">{post.data.order}.</span>
+                  <span class="chapter-name">{post.data.title}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    ))}
+  </nav>
+</aside>
+
+<style>
+  .sidebar-wrapper {
+    width: 280px;
+    flex-shrink: 0;
+    padding: 1.5rem 1rem 3rem 1.5rem;
+    border-right: 1px solid var(--color-border);
+    background: var(--color-surface);
+    min-height: calc(100vh - 65px);
+    position: sticky;
+    top: 65px;
+    height: calc(100vh - 65px);
+    overflow-y: auto;
+  }
+
+  .sidebar-header {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .overview-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-heading);
+    padding: 0.45rem 0.6rem;
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .overview-link:hover, .overview-link.active {
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .module-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .module-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    padding: 0.25rem 0.5rem;
+  }
+
+  .module-heading-link {
+    color: inherit;
+    transition: color 0.15s;
+  }
+
+  .module-heading-link:hover {
+    color: var(--color-primary);
+  }
+
+  .module-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .chapter-link {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: 5px;
+    color: var(--color-text);
+    line-height: 1.35;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .chapter-order {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    min-width: 1.2rem;
+  }
+
+  .chapter-name {
+    flex: 1;
+  }
+
+  .chapter-link:hover {
+    background: #e5e7eb;
+    color: var(--color-text-heading);
+  }
+
+  .chapter-link.active {
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .chapter-link.active .chapter-order {
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 980px) {
+    .sidebar-wrapper {
+      width: 100%;
+      height: auto;
+      position: static;
+      border-right: none;
+      border-bottom: 1px solid var(--color-border);
+      max-height: 320px;
+    }
+  }
+</style>
